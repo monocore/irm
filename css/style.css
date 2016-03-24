@@ -2,240 +2,287 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
 }
-
 body {
-    line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-    list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-    quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 /* Avenir */
 @font-face {
-    font-family: "Avenir LT W01 35 Light";
-    src: url("../font/AvenirLTStd-Light.eot");
-    src: url("../font/AvenirLTStd-Light.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Light.woff") format("woff"), url("../font/AvenirLTStd-Light.ttf") format("truetype"), url("../font/AvenirLTStd-Light.svg#Avenir LT W01 35 Light") format("svg");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Avenir LT W01 35 Light";
+  src: url("../font/AvenirLTStd-Light.eot");
+  src: url("../font/AvenirLTStd-Light.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Light.woff") format("woff"), url("../font/AvenirLTStd-Light.ttf") format("truetype"), url("../font/AvenirLTStd-Light.svg#Avenir LT W01 35 Light") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
-
 @font-face {
-    font-family: "Avenir LT W01 45 Book";
-    src: url("../font/AvenirLTStd-Book.eot");
-    src: url("../font/AvenirLTStd-Book.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Book.woff") format("woff"), url("../font/AvenirLTStd-Book.ttf") format("truetype"), url("../font/AvenirLTStd-Book.svg#Avenir LT W01 45 Book") format("svg");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Avenir LT W01 45 Book";
+  src: url("../font/AvenirLTStd-Book.eot");
+  src: url("../font/AvenirLTStd-Book.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Book.woff") format("woff"), url("../font/AvenirLTStd-Book.ttf") format("truetype"), url("../font/AvenirLTStd-Book.svg#Avenir LT W01 45 Book") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
-
 @font-face {
-    font-family: "Avenir LT W01 65 Medium";
-    src: url("../font/AvenirLTStd-Medium.eot");
-    src: url("../font/AvenirLTStd-Medium.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Medium.woff") format("woff"), url("../font/AvenirLTStd-Medium.ttf") format("truetype"), url("../font/AvenirLTStd-Medium.svg#Avenir LT W01 65 Medium") format("svg");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Avenir LT W01 65 Medium";
+  src: url("../font/AvenirLTStd-Medium.eot");
+  src: url("../font/AvenirLTStd-Medium.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Medium.woff") format("woff"), url("../font/AvenirLTStd-Medium.ttf") format("truetype"), url("../font/AvenirLTStd-Medium.svg#Avenir LT W01 65 Medium") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
-
 @font-face {
-    font-family: "Avenir LT W01 85 Heavy";
-    src: url("../font/AvenirLTStd-Heavy.eot");
-    src: url("../font/AvenirLTStd-Heavy.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Heavy.woff") format("woff"), url("../font/AvenirLTStd-Heavy.ttf") format("truetype"), url("../font/AvenirLTStd-Heavy.svg#Avenir LT W01 85 Heavy") format("svg");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Avenir LT W01 85 Heavy";
+  src: url("../font/AvenirLTStd-Heavy.eot");
+  src: url("../font/AvenirLTStd-Heavy.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Heavy.woff") format("woff"), url("../font/AvenirLTStd-Heavy.ttf") format("truetype"), url("../font/AvenirLTStd-Heavy.svg#Avenir LT W01 85 Heavy") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
-
 @font-face {
-    font-family: "Avenir LT W01 95 Black";
-    src: url("../font/AvenirLTStd-Black.eot");
-    src: url("../font/AvenirLTStd-Black.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Black.woff") format("woff"), url("../font/AvenirLTStd-Black.ttf") format("truetype"), url("../font/AvenirLTStd-Black.svg#Avenir LT W01 95 Black") format("svg");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Avenir LT W01 95 Black";
+  src: url("../font/AvenirLTStd-Black.eot");
+  src: url("../font/AvenirLTStd-Black.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Black.woff") format("woff"), url("../font/AvenirLTStd-Black.ttf") format("truetype"), url("../font/AvenirLTStd-Black.svg#Avenir LT W01 95 Black") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
-
 body {
-    width: 100%;
-    background-color: #eef3f7;
-    font-family:  "Avenir LT W01 35 Light", "Open Sans", sans-serif;
-    font-weight: normal;
-    color: #687d82;
+  width: 100%;
+  background-color: #eef3f7;
+  font-family: "Avenir LT W01 35 Light", "Open Sans", sans-serif;
+  font-weight: normal;
+  color: #687d82;
 }
-
-h1, h2, h3 {
-    font-size: 26px;
-    font-weight: 200;
+h1,
+h2,
+h3 {
+  font-size: 26px;
+  font-weight: 200;
 }
-
 ol {
-    list-style: none;
+  list-style: none;
 }
 header {
-    background-color: #003567;
-    height: 80px;
+  background-color: #003567;
+  height: 80px;
 }
-
+header .logo {
+  display: inline-block;
+  height: 80px;
+  width: 200px;
+  background-color: #fff;
+  background-image: url("../img/logo-tkp.png");
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: 50% 50%;
+}
 header h1 {
-    display: inline-block;
-    margin: 0px 25px;
-    position: relative;
-    top: -30px;
-    color: #fff;
+  display: inline-block;
+  margin: 0px 25px;
+  position: relative;
+  top: -30px;
+  color: #fff;
 }
-
-span.logo {
-    display: inline-block;
-    height: 80px;
-    width: 200px;
-    background-color: #fff;
-    background-image: url("../img/logo-tkp.png");
-    background-repeat: no-repeat;
-    background-size: 75%;
-    background-position: 50% 50%;
+#tree {
+  padding: 0 40px 40px 40px;
 }
-
-.level {
-    padding: 0 40px 40px 40px;
-}
-
 .big-li {
-    width: 100%;
-    background-color: #fff;
-    margin-top: 25px;
-    -webkit-box-shadow: 1px 2px 4px 0px rgba(216,216,216,0.79);
-    -moz-box-shadow: 1px 2px 4px 0px rgba(216,216,216,0.79);
-    box-shadow: 1px 2px 4px 0px rgba(216,216,216,0.79);
-    border-radius: 4px;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 25px;
+  -webkit-box-shadow: 1px 2px 4px 0px rgba(216, 216, 216, 0.79);
+  -moz-box-shadow: 1px 2px 4px 0px rgba(216, 216, 216, 0.79);
+  box-shadow: 1px 2px 4px 0px rgba(216, 216, 216, 0.79);
+  border-radius: 4px;
 }
-
 ol.details > li {
-    border-top: 1px solid #d9e2e9;
-    /*get rid of big-li border*/
-    margin-right: -7px;
-    border-right: 7px solid white;
-    padding: 20px;
-    width: auto;
+  border-top: 1px solid #d9e2e9;
+  /*get rid of big-li border*/
+  margin-right: -7px;
+  border-right: 7px solid white;
+  padding: 20px;
+  width: auto;
 }
-
-.level ol li > a
-{
-    padding: 25px 30px;
-    display: inline-block;
-    width: 100%;
+.level ol li > a {
+  padding: 25px 30px;
+  display: inline-block;
+  width: 100%;
 }
-
 .status-green {
-    border-right: 7px solid #39ba7a;
+  border-right: 7px solid #39ba7a;
 }
-
 .status-red {
-    border-right: 7px solid #f8494a;
+  border-right: 7px solid #f8494a;
 }
-
 .expandable.collapsed .expander {
-    display: none;
+  display: none;
 }
-
 .status-detail-mini {
-    padding: 3px;
+  padding: 3px;
 }
-
 .status-detail-mini:before {
-    content: "\f111";
-    font-family: "FontAwesome";
-    margin-right: 4px;
+  content: "\f111";
+  font-family: "FontAwesome";
+  margin-right: 4px;
 }
-
-.status-detail-mini.red:before {
-    color: #f8494a;
+.status-detail-mini:before.red {
+  color: #f8494a;
 }
-
-.status-detail-mini.green:before {
-    color: #39ba7a;
+.status-detail-mini:before.green {
+  color: #39ba7a;
 }
-
 .status-detail:before {
-    content: "\f111";
-    font-family: "FontAwesome";
-    font-size: 32px;
+  content: "\f111";
+  font-family: "FontAwesome";
+  font-size: 32px;
 }
-
-.status-detail.red:before {
-    color: #f8494a;
+.status-detail:before.red {
+  color: #f8494a;
 }
-
-.status-detail.green:before {
-    color: #39ba7a;
+.status-detail:before.green {
+  color: #39ba7a;
 }
-
-.status-detail.down:before {
-    content: "\f0ab";
+.status-detail:before.down {
+  content: "\f0ab";
 }
-.status-detail.up:before {
-    content: "\f0aa";
+.status-detail:before.up {
+  content: "\f0aa";
 }
-
-/*gridje*/
+/* Grid ?*/
 .col1 {
-    width: 85%;
-    float: left;
+  width: 85%;
+  float: left;
 }
 .col2 {
-    width: 15%;
-    float: right;
-    text-align: right;
+  width: 15%;
+  float: right;
+  text-align: right;
 }
-
 .hidable > .row {
-    margin-top: 20px;
+  margin-top: 20px;
 }
-
 .row:after {
-    content: "";
-    clear: both;
-    display: block;
+  content: "";
+  clear: both;
+  display: block;
 }
-
 .hidden {
-    display: none;
+  display: none;
 }
-
