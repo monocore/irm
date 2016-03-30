@@ -193,6 +193,10 @@ ol li.big-li > .row .col1 a {
   border-right: 7px solid #f8494a;
 }
 
+.status-undefined {
+  border-right: 7px solid lightslategray;
+}
+
 .expandable.collapsed .expander {
   display: none;
 }
@@ -259,7 +263,11 @@ ol li.big-li > .row .col1 a {
 .hidden {
   display: none;
 }
-
+//tree nesting
+ol ol ol {
+    margin-left: 20px;
+}
+//interaction tree
 ol.hidden {
   position: absolute;
   overflow: hidden;

@@ -51,7 +51,7 @@ var App = {
                     children.map(function (item) {
                         if (item.children) {
                             return m("li",
-                                m("a", { class: "big-a expander",
+                                m("a", { class: "big-a expander status-" + item.status,                                        
                                          onclick: function () {
                                     this.nextElementSibling.classList.toggle("hidden");
                                     this.nextElementSibling.classList.toggle("viewing");
@@ -63,7 +63,7 @@ var App = {
                             if (item.nid) {//expect teaser etc
                                 return drawBottomLevelItem(item);
                             } else {
-                                return m("li", m("a", {class: "big-a bottom-level"}, m("h2", item.name)));
+                                return m("li", m("a", {class: "big-a bottom-level status-" + item.status}, m("h2", item.name)));
                             }
                         }
                     })
@@ -107,7 +107,26 @@ var App = {
 }
 
 function setStatus(json) {
-    console.log(json.tree);
+    console.log(json);
+    json.tree.forEach(function(parent, parentIndex) {
+        console.log(parent)
+        if (parent.children) {
+            parent.children.forEach(function(child, index) {
+                var status = "green";
+                if (child.children) {
+                    //recurse
+                    // ...
+                    json.tree[parentIndex].children[index].status = status;
+                } else {
+                    //bottomlevel item, should have status set by server
+                }    
+            });
+        } else {
+            //no children, status should be set by server            
+            //if no status is set, leave it as it will be rendered as status-undefined            
+        }
+    }, this);
+    console.log(json);
     return json;
 }
 

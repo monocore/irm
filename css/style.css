@@ -247,6 +247,9 @@ ol li.big-li > .row .col1 a {
 .status-red {
   border-right: 7px solid #f8494a;
 }
+.status-undefined {
+  border-right: 7px solid lightslategray;
+}
 .expandable.collapsed .expander {
   display: none;
 }
@@ -303,6 +306,9 @@ ol li.big-li > .row .col1 a {
 }
 .hidden {
   display: none;
+}
+ol ol ol {
+  margin-left: 20px;
 }
 ol.hidden {
   position: absolute;
