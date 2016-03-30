@@ -35,116 +35,110 @@
           "tid": 45,
           "children": [
             {
-              "name": "Registratie en pensioenaanspraken",
-              "tid": 45,
+              "name": "Verwerken deelnemersgegevens",
+              "tid": 0
+            },
+            {
+              "name": "Informatievoorziening",
+              "tid": 0,
               "children": [
                 {
-                  "name": "Verwerken deelnemersgegevens",
-                  "tid": 0
+                  "name": "sub categorie I",
+                  "tid": 0,
+                  "nid": 123,
+                  "status": "red down",
+                  "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
+                  "statushistory": [
+                    {
+                      "period": "Q4 2014",
+                      "status": "red"
+                    },
+                    {
+                      "period": "Q1 2015",
+                      "status": "green"
+                    },
+                    {
+                      "period": "Q2 2015",
+                      "status": "green"
+                    },
+                    {
+                      "period": "Q3 2015",
+                      "status": "green"
+                    }
+                  ]
                 },
                 {
-                  "name": "Informatievoorziening",
+                  "name": "sub categorie II",
                   "tid": 0,
-                  "children": [
+                  "nid": 124,
+                  "status": "red",
+                  "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
+                  "statushistory": [
                     {
-                      "name": "sub categorie I",
-                      "tid": 0,
-                      "nid": 123,
-                      "status": "red down",
-                      "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
-                      "statushistory": [
-                        {
-                          "period": "Q4 2014",
-                          "status": "red"
-                        },
-                        {
-                          "period": "Q1 2015",
-                          "status": "green"
-                        },
-                        {
-                          "period": "Q2 2015",
-                          "status": "green"
-                        },
-                        {
-                          "period": "Q3 2015",
-                          "status": "green"
-                        }
-                      ]
+                      "period": "Q4 2014",
+                      "status": "red"
                     },
                     {
-                      "name": "sub categorie II",
-                      "tid": 0,
-                      "nid": 124,
-                      "status": "red",
-                      "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
-                      "statushistory": [
-                        {
-                          "period": "Q4 2014",
-                          "status": "red"
-                        },
-                        {
-                          "period": "Q1 2015",
-                          "status": "green"
-                        },
-                        {
-                          "period": "Q2 2015",
-                          "status": "green"
-                        },
-                        {
-                          "period": "Q3 2015",
-                          "status": "red"
-                        }
-                      ]
+                      "period": "Q1 2015",
+                      "status": "green"
                     },
                     {
-                      "name": "sub categorie III",
-                      "tid": 0,
-                      "nid": 125,
-                      "status": "green up",
-                      "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
-                      "statushistory": [
-                        {
-                          "period": "Q4 2014",
-                          "status": "red"
-                        },
-                        {
-                          "period": "Q1 2015",
-                          "status": "green"
-                        },
-                        {
-                          "period": "Q2 2015",
-                          "status": "green"
-                        },
-                        {
-                          "period": "Q3 2015",
-                          "status": "red"
-                        }
-                      ]
+                      "period": "Q2 2015",
+                      "status": "green"
                     },
                     {
-                      "name": "sub categorie IV",
-                      "tid": 0,
-                      "nid": 126,
-                      "status": "green",
-                      "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
-                      "statushistory": [
-                        {
-                          "period": "Q4 2014",
-                          "status": "red"
-                        },
-                        {
-                          "period": "Q1 2015",
-                          "status": "green"
-                        },
-                        {
-                          "period": "Q2 2015",
-                          "status": "green"
-                        },
-                        {
-                          "period": "Q3 2015",
-                          "status": "green"
-                        }
-                      ]
+                      "period": "Q3 2015",
+                      "status": "red"
+                    }
+                  ]
+                },
+                {
+                  "name": "sub categorie III",
+                  "tid": 0,
+                  "nid": 125,
+                  "status": "green up",
+                  "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
+                  "statushistory": [
+                    {
+                      "period": "Q4 2014",
+                      "status": "red"
+                    },
+                    {
+                      "period": "Q1 2015",
+                      "status": "green"
+                    },
+                    {
+                      "period": "Q2 2015",
+                      "status": "green"
+                    },
+                    {
+                      "period": "Q3 2015",
+                      "status": "red"
+                    }
+                  ]
+                },
+                {
+                  "name": "sub categorie IV",
+                  "tid": 0,
+                  "nid": 126,
+                  "status": "green",
+                  "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
+                  "statushistory": [
+                    {
+                      "period": "Q4 2014",
+                      "status": "red"
+                    },
+                    {
+                      "period": "Q1 2015",
+                      "status": "green"
+                    },
+                    {
+                      "period": "Q2 2015",
+                      "status": "green"
+                    },
+                    {
+                      "period": "Q3 2015",
+                      "status": "green"
                     }
                   ]
                 }

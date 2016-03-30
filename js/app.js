@@ -27,52 +27,43 @@ var requestWrapper = function (opts) {
             .then(function (mydata) { // success!
                 me.success = true;
                 me.failed = me.loading = false;
-                me.data = mydata;
+                me.data = setStatus(mydata);
                 m.redraw();
             });
     }
 }
-var nestLevel = 1;
+
 var App = {
     service: requestWrapper({method: "GET", url: "/json/data.json"}),
     view: function () {
         return [
-            drawLevels(App.service.data.tree),
+            drawLevels(App.service.data.tree, false),
             this.service.failed ? [m("h4", "Error loading data: "), m("p", "Error status: " + this.service.errorStatus)] : ''
         ];
 
-        function drawLevels(children) {
+        function drawLevels(children, nested) {
             if (!App.service.success) {
                 return;
             }
-            console.log(nestLevel);
             if (children) {
-                return m("ol", {class: "level level" + nestLevel},
+                var hidden = nested ? "hidden" : "";
+                return m("ol", {class: "level " + hidden},
                     children.map(function (item) {
                         if (item.children) {
-                            nestLevel++;
-                            return m("li", {class: "big-li"}, m("a", m("h2", item.name)), drawLevels(item.children));
-                            nestLevel--;
+                            return m("li",
+                                m("a", { class: "big-a expander",
+                                         onclick: function () {
+                                    this.nextElementSibling.classList.toggle("hidden");
+                                    this.nextElementSibling.classList.toggle("viewing");
+                                    document.getElementById("title").innerHTML = item.name;
+                                }},m("h2", item.name)), drawLevels(item.children, true)
+                            );
                         }
                         else {
                             if (item.nid) {//expect teaser etc
-                                return m("li", {class: "expander bottom-level"},
-                                    m("div", {class: "row"},
-                                        m("div", {class:"col1"},
-                                            m("a", m("h2", item.name))),
-                                        m("div", {class:"col2"},
-                                            m("span", {class: "status-detail " + item.status})
-                                        )
-                                    ),
-                                    m("div", {class: "hidable hidden"},
-                                        m("div", {class: "row"},
-                                            m("div", {class: "col1"}, m("p", item.teaser)),
-                                            m("div", {class: "col2"}, drawHistory(item))
-                                        )
-                                    )
-                                );
+                                return drawBottomLevelItem(item);
                             } else {
-                                return m("li", {class: "bottom-level"}, m("a", m("h2", item.name)));
+                                return m("li", m("a", {class: "big-a bottom-level"}, m("h2", item.name)));
                             }
                         }
                     })
@@ -80,15 +71,44 @@ var App = {
             }
         }
 
+        function drawBottomLevelItem(item){
+            return m("li", {class: "bottom-level"},
+                m("a[href='javascript:;']", {
+                        class: "detail expander", onclick: function () {
+                            this.nextElementSibling.classList.toggle("hidden");
+                        }
+                    },
+                    m("div", {class: "row"},
+                        m("div", {class: "col1"},
+                            m("p", {class: "detail-title"}, item.name)),
+                        m("div", {class: "col2"},
+                            m("span", {class: "status-detail " + item.status}))
+                    )
+                ),
+                m("div", {class: "hidable hidden"},
+                    m("div", {class: "row"},
+                        m("div", {class: "col1"}, m("p", item.teaser)),
+                        m("div", {class: "col2"}, drawHistory(item))
+                    )
+                )
+            );
+        }
+
         function drawHistory(item) {
             if (!App.service.success) {
                 return;
             }
             return m("ol", item.statushistory.map(function (row) {
-                return m("li", {class: row.status}, row.period);
+                return m("li", {class: "status-detail-mini " + row.status}, row.period);
             }));
         }
 
     }
 }
+
+function setStatus(json) {
+    console.log(json.tree);
+    return json;
+}
+
 m.module(document.getElementById("tree"), App);
