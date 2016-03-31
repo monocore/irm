@@ -1,5 +1,7 @@
 {
   "logo": "",
+  "title": "SLA",
+  "period": "Q3 2015",
   "tree": [
     {
       "name": "Diensten ten behoeve van werkgevers",
@@ -29,18 +31,22 @@
     {
       "name": "Diensten ten behoeve van deelnemers",
       "tid": 34,
+      "status": "red",
       "children": [
         {
           "name": "Registratie en pensioenaanspraken",
           "tid": 45,
+          "status" : "red",
           "children": [
             {
               "name": "Verwerken deelnemersgegevens",
+              "status": "green",
               "tid": 0
             },
             {
               "name": "Informatievoorziening",
               "tid": 0,
+              "status": "red",
               "children": [
                 {
                   "name": "sub categorie I",
@@ -148,6 +154,7 @@
         },
         {
           "name": "Procesbehandeling ten behoeve van deelnemers",
+          "status": "green",
           "tid": 88
         }
       ]
@@ -158,6 +165,7 @@
     },
     {
       "name": "Communicatie",
+      "status": "green",
       "tid": 0
     },
     {

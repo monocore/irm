@@ -27,7 +27,7 @@ var requestWrapper = function (opts) {
             .then(function (mydata) { // success!
                 me.success = true;
                 me.failed = me.loading = false;
-                me.data = setStatus(mydata);
+                me.data = mydata;
                 m.redraw();
             });
     }
@@ -45,6 +45,9 @@ var App = {
             if (!App.service.success) {
                 return;
             }
+            
+            document.getElementById("title").innerHTML = App.service.data.title + App.service.data.period;
+            
             if (children) {
                 var hidden = nested ? "hidden" : "";
                 return m("ol", {class: "level " + hidden},
@@ -102,32 +105,8 @@ var App = {
                 return m("li", {class: "status-detail-mini " + row.status}, row.period);
             }));
         }
-
     }
 }
 
-function setStatus(json) {
-    console.log(json);
-    json.tree.forEach(function(parent, parentIndex) {
-        console.log(parent)
-        if (parent.children) {
-            parent.children.forEach(function(child, index) {
-                var status = "green";
-                if (child.children) {
-                    //recurse
-                    // ...
-                    json.tree[parentIndex].children[index].status = status;
-                } else {
-                    //bottomlevel item, should have status set by server
-                }    
-            });
-        } else {
-            //no children, status should be set by server            
-            //if no status is set, leave it as it will be rendered as status-undefined            
-        }
-    }, this);
-    console.log(json);
-    return json;
-}
-
+//set initial title and period
 m.module(document.getElementById("tree"), App);

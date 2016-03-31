@@ -177,14 +177,6 @@ a.detail {
   padding: 5px 20px;
 }
 
-/*
-ol li.big-li > a,
-ol li.big-li > .row .col1 a {
-  padding: 25px 30px;
-  display: inline-block;
-  width: 100%;
-}*/
-
 .status-green {
   border-right: 7px solid #39ba7a;
 }
@@ -197,8 +189,19 @@ ol li.big-li > .row .col1 a {
   border-right: 7px solid lightslategray;
 }
 
-.expandable.collapsed .expander {
-  display: none;
+i {
+  margin-right: 4px;
+  vertical-align: middle;
+  font-size: 12px !important;
+}
+
+li.hierarchy > a.expander {
+
+  i.fa.fa-chevron-right {
+    &:before {
+      content: "\f053" //chevron left
+    }
+  }
 }
 
 .status-detail-mini {
@@ -263,29 +266,29 @@ ol li.big-li > .row .col1 a {
 .hidden {
   display: none;
 }
-//tree nesting
-ol ol ol {
-    margin-left: 20px;
-}
-//interaction tree
-ol.hidden {
-  position: absolute;
-  overflow: hidden;
-  width: 0px;
-  height: 100%;
-  left: 100%;
-  -moz-transition: left 1s ease, width 0s ease-out 1s, border-width 0s ease-out 1s;
-  -webkit-transition: left 1s ease, width 0s ease-out 1s, border-width 0s ease-out 1s;
-}
 
-#tree > ol > li > ol.viewing {
-  position: absolute;
-  padding: 0 40px 40px 40px;
-  top: 80px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #eef3f7;
-  -moz-transition: left 1s ease 0.1s, width 0s ease-out 0.1s, border-width 0s ease-out 0.1s;
-  -webkit-transition: left 1s ease 0.1s, width 0s ease-out 0.1s, border-width 0s ease-out 0.1s;
+li.hierarchy {
+  //reset big-a
+  & > .big-a {
+    display: block;
+    padding: 5px;
+    background-color: #fff;
+    margin-top: 5px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-radius: 4px;
+    h2,h3,h4 {
+      font-size: 16px;
+    }
+  }
+  li.hierarchy {
+    margin-left: 20px;
+    li.hierarchy {
+      margin-left: 20px;
+      li.hierarchy {
+        margin-left: 20px;
+      }
+    }
+  }
 }
