@@ -31,7 +31,7 @@ var requestWrapper = function (opts) {
 }
 
 var App = {
-    service: requestWrapper({method: "GET", url: "/json/data.json"}),
+    service: requestWrapper({method: "GET", url: "/json/data.json"}),    
     view: function () {
         return [
             drawPage(App.service.data),
@@ -47,11 +47,14 @@ var App = {
                     m("span", {class: "logo"}),
                     m("h1", {id: "title"}, data.title)
                 ),
-                m("div", {id: "tree"}, drawLevels(data.tree, false))
+                m("div", {id: "tree"}, drawNodes(data.tree, false))
             ]
         }
 
-        function drawLevels(children, nested) {
+        function drawNodes(children, nested) {
+            if (nested) {
+                App.nestLevel++;
+            }
             if (children) {
                 var hidden = nested ? "hidden" : "";
                 return m("ol", {class: "level " + hidden},
@@ -66,13 +69,13 @@ var App = {
                                         //show the adjacent list(ol)
                                         this.nextElementSibling.classList.toggle("hidden");
                                     }
-                                }, m("h2", m("i", {class:"fa fa-chevron-right"}), item.name)), drawLevels(item.children, true)
+                                }, m("h2", m("i", {class:"fa fa-chevron-right"}), item.name)), drawNodes(item.children, true)
                             );
                         }
                         else {
                             if (item.nid) {//expect teaser etc
-                                return drawBottomLevelItem(item);
-                            } else {
+                                return drawEndNode(item);
+                            } else {                                
                                 return m("li", m("a", {class: "big-a bottom-level status-" + item.status}, m("h2", item.name)));
                             }
                         }
@@ -81,7 +84,7 @@ var App = {
             }
         }
 
-        function drawBottomLevelItem(item) {
+        function drawEndNode(item) {            
             return m("li", {class: "bottom-level"},
                 m("a[href='javascript:;']", {
                         class: "detail expander", onclick: function () {
@@ -98,9 +101,18 @@ var App = {
                 m("div", {class: "hidable hidden"},
                     m("div", {class: "row"},
                         m("div", {class: "col1"}, m("p", item.teaser)),
-                        m("div", {class: "col2"}, drawHistory(item))
+                        m("div", {class: "col2"}, drawHistory(item)),
+                        m("button", {onclick: function(){
+                            showNode(this.nextElementSibling, item.nid);
+                        }}, "details"),
+                            m("div", {class: "popup-node hidden"}, m("i", {class:"fa fa-times", onclick: function(){
+                                this.parentNode.classList.toggle("hidden");
+                            }}),
+                                m("div", {class: "content"})
+                            )                        
                     )
-                )
+                )               
+                
             );
         }
 
@@ -126,6 +138,16 @@ function toggleSiblings(el, current) {
     }
     el.classList.toggle("hidden");
     el.classList.toggle("hierarchy");
+}
+
+function showNode(element, nid) {
+    $(".content", element).load("/json/node-" + nid.toString() + ".html", function(){
+        element.classList.toggle("hidden");
+        height = $(window).height() -70;   // returns height of browser viewport        
+        width = $(window).width() -70;
+        $(element).css({"width" : width, "height" : height});
+        Chartist.Line('.ct-chart', data, options);        
+    });
 }
 
 m.module(document.getElementById("main-container"), App);

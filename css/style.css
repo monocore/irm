@@ -227,6 +227,7 @@ header h1 {
 }
 p.detail-title {
   line-height: 32px;
+  font-size: 22px;
 }
 a.detail {
   background-color: white;
@@ -305,27 +306,28 @@ li.hierarchy > a.expander i.fa.fa-chevron-right:before {
 .hidden {
   display: none;
 }
-li.hierarchy > .big-a {
-  display: block;
-  padding: 5px;
-  background-color: #fff;
-  margin-top: 5px;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  border-radius: 4px;
+#tree li.hierarchy ol {
+  padding-left: 20px;
 }
-li.hierarchy > .big-a h2,
-li.hierarchy > .big-a h3,
-li.hierarchy > .big-a h4 {
-  font-size: 16px;
+button {
+  margin-top: 10px;
+  padding: 7px 15px;
 }
-li.hierarchy li.hierarchy {
-  margin-left: 20px;
+.popup-node {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  background-color: white;
+  border: 1px solid #e2e2e2;
+  padding: 40px;
+  -webkit-box-shadow: 9px 10px 5px -2px rgba(189, 187, 189, 0.55);
+  -moz-box-shadow: 9px 10px 5px -2px rgba(189, 187, 189, 0.55);
+  box-shadow: 9px 10px 5px -2px rgba(189, 187, 189, 0.55);
 }
-li.hierarchy li.hierarchy li.hierarchy {
-  margin-left: 20px;
-}
-li.hierarchy li.hierarchy li.hierarchy li.hierarchy {
-  margin-left: 20px;
+.popup-node i.fa-times {
+  float: right;
+  font-size: 22px !important;
+  position: relative;
+  top: -20px;
+  right: -20px;
 }
