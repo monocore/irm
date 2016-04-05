@@ -54,7 +54,7 @@ var Header = {
 }
 
 var App = {
-    service: requestWrapper({method: "GET", url: "/json/data.json"}),
+    service: requestWrapper({method: "GET", url: "json/data.json"}),
     view: function () {
         return [
             drawPage(App.service.data),
@@ -93,8 +93,8 @@ var App = {
                                         }
                                         //show the adjacent list(ol)
                                         this.parentElement.classList.toggle("expanded");
-
                                         this.nextElementSibling.classList.toggle("hidden");
+
                                     }
                                 }, m("h2", m("i", {class: "fa fa-chevron-right"}), item.name)), drawNodes(item.children, true)
                             );
@@ -176,7 +176,7 @@ function toggleSiblings(el, current, item) {
 }
 
 function showNode(element, nid) {
-    $('.content', element).load("/json/node-" + nid.toString() + ".html", function () {
+    $('.content', element).load("json/node-" + nid.toString() + ".html", function () {
         element.classList.toggle("hidden");
         height = $(window).height() - 70;   // returns height of browser viewport
         width = $(window).width() - 70;

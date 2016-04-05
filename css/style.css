@@ -1,7 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* meyer reset*/
 html,
 body,
 div,
@@ -130,36 +127,36 @@ table {
 /* Avenir */
 @font-face {
   font-family: "Avenir LT W01 35 Light";
-  src: url("../font/AvenirLTStd-Light.eot");
-  src: url("../font/AvenirLTStd-Light.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Light.woff") format("woff"), url("../font/AvenirLTStd-Light.ttf") format("truetype"), url("../font/AvenirLTStd-Light.svg#Avenir LT W01 35 Light") format("svg");
+  src: url("../fonts/AvenirLTStd-Light.eot");
+  src: url("../fonts/AvenirLTStd-Light.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Light.woff") format("woff"), url("../font/AvenirLTStd-Light.ttf") format("truetype"), url("../font/AvenirLTStd-Light.svg#Avenir LT W01 35 Light") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir LT W01 45 Book";
-  src: url("../font/AvenirLTStd-Book.eot");
-  src: url("../font/AvenirLTStd-Book.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Book.woff") format("woff"), url("../font/AvenirLTStd-Book.ttf") format("truetype"), url("../font/AvenirLTStd-Book.svg#Avenir LT W01 45 Book") format("svg");
+  src: url("../fonts/AvenirLTStd-Book.eot");
+  src: url("../fonts/AvenirLTStd-Book.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Book.woff") format("woff"), url("../font/AvenirLTStd-Book.ttf") format("truetype"), url("../font/AvenirLTStd-Book.svg#Avenir LT W01 45 Book") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir LT W01 65 Medium";
-  src: url("../font/AvenirLTStd-Medium.eot");
-  src: url("../font/AvenirLTStd-Medium.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Medium.woff") format("woff"), url("../font/AvenirLTStd-Medium.ttf") format("truetype"), url("../font/AvenirLTStd-Medium.svg#Avenir LT W01 65 Medium") format("svg");
+  src: url("../fonts/AvenirLTStd-Medium.eot");
+  src: url("../fonts/AvenirLTStd-Medium.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Medium.woff") format("woff"), url("../font/AvenirLTStd-Medium.ttf") format("truetype"), url("../font/AvenirLTStd-Medium.svg#Avenir LT W01 65 Medium") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir LT W01 85 Heavy";
-  src: url("../font/AvenirLTStd-Heavy.eot");
-  src: url("../font/AvenirLTStd-Heavy.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Heavy.woff") format("woff"), url("../font/AvenirLTStd-Heavy.ttf") format("truetype"), url("../font/AvenirLTStd-Heavy.svg#Avenir LT W01 85 Heavy") format("svg");
+  src: url("../fonts/AvenirLTStd-Heavy.eot");
+  src: url("../fonts/AvenirLTStd-Heavy.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Heavy.woff") format("woff"), url("../font/AvenirLTStd-Heavy.ttf") format("truetype"), url("../font/AvenirLTStd-Heavy.svg#Avenir LT W01 85 Heavy") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir LT W01 95 Black";
-  src: url("../font/AvenirLTStd-Black.eot");
-  src: url("../font/AvenirLTStd-Black.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Black.woff") format("woff"), url("../font/AvenirLTStd-Black.ttf") format("truetype"), url("../font/AvenirLTStd-Black.svg#Avenir LT W01 95 Black") format("svg");
+  src: url("../fonts/AvenirLTStd-Black.eot");
+  src: url("../fonts/AvenirLTStd-Black.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Black.woff") format("woff"), url("../font/AvenirLTStd-Black.ttf") format("truetype"), url("../font/AvenirLTStd-Black.svg#Avenir LT W01 95 Black") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -309,16 +306,6 @@ li.hierarchy > a.expander i.fa.fa-chevron-right:before {
 }
 .hidden {
   display: none;
-}
-ol.hidden {
-  transform: scale(0);
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-ol.active {
-  display: block;
-  transform: scale(1);
-  opacity: 1;
-  animation: anim 0.3s ease-in-out;
 }
 #tree li.hierarchy ol {
   padding-left: 20px;

@@ -2,29 +2,29 @@
   font-family: 'Oxygen';
   font-style: normal;
   font-weight: 300;
-  src: local('Oxygen Light'), local('Oxygen-Light'), url(https://fonts.gstatic.com/s/oxygen/v5/AwBqWF2kjhlybWamaKMPcbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+  src: local('Oxygen Light'), local('Oxygen-Light'), url(../fonts/AwBqWF2kjhlybWamaKMPcbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
 @font-face {
   font-family: 'Oxygen';
   font-style: normal;
   font-weight: 400;
-  src: local('Oxygen'), local('Oxygen-Regular'), url(https://fonts.gstatic.com/s/oxygen/v5/eAWT4YudG0otf3rlsJD6zOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+  src: local('Oxygen'), local('Oxygen-Regular'), url(../fonts/eAWT4YudG0otf3rlsJD6zOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
 }
 @font-face {
   font-family: 'Oxygen';
   font-style: normal;
   font-weight: 700;
-  src: local('Oxygen Bold'), local('Oxygen-Bold'), url(https://fonts.gstatic.com/s/oxygen/v5/yVHpdQrmTj9Kax1tmFSx2rO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+  src: local('Oxygen Bold'), local('Oxygen-Bold'), url(../fonts/yVHpdQrmTj9Kax1tmFSx2rO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
 @font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 400;
-  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(https://fonts.gstatic.com/s/sourcecodepro/v6/mrl8jkM18OlOQN8JLgasD9Hq-FFgoDNV3GTKpHwuvtI.woff) format('woff');
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(../fonts/mrl8jkM18OlOQN8JLgasD9Hq-FFgoDNV3GTKpHwuvtI.woff) format('woff');
 }
 @font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 700;
-  src: local('Source Code Pro Bold'), local('SourceCodePro-Bold'), url(https://fonts.gstatic.com/s/sourcecodepro/v6/leqv3v-yTsJNC7nFznSMqYqjGYJUyOXcBwUQbRaNH6c.woff) format('woff');
+  src: local('Source Code Pro Bold'), local('SourceCodePro-Bold'), url(../fonts/leqv3v-yTsJNC7nFznSMqYqjGYJUyOXcBwUQbRaNH6c.woff) format('woff');
 }
