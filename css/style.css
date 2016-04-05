@@ -166,8 +166,8 @@ table {
 body {
   width: 100%;
   background-color: #eef3f7;
-  font-family: "Avenir LT W01 35 Light", "Open Sans", sans-serif;
-  font-weight: normal;
+  font-family: "Avenir LT W01 35 Light", "Open Sans", "Oxygen", sans-serif;
+  font-weight: 100;
   color: #687d82;
 }
 a {
@@ -203,6 +203,9 @@ header h1 {
   top: -30px;
   color: #fff;
 }
+header #title i {
+  margin-left: 10px;
+}
 #tree {
   padding: 5px 30px;
 }
@@ -233,7 +236,7 @@ a.detail {
   background-color: white;
   border-top: 1px solid #d9e2e9;
   display: block;
-  padding: 5px 20px;
+  padding: 7px 20px;
 }
 .status-green {
   border-right: 7px solid #39ba7a;
@@ -245,12 +248,13 @@ a.detail {
   border-right: 7px solid lightslategray;
 }
 i {
-  margin-right: 4px;
+  margin-right: 10px;
   vertical-align: middle;
   font-size: 12px !important;
+  color: lightgrey;
 }
 li.hierarchy > a.expander i.fa.fa-chevron-right:before {
-  content: "\f053";
+  content: "\f078";
 }
 .status-detail-mini {
   padding: 3px;
@@ -306,12 +310,86 @@ li.hierarchy > a.expander i.fa.fa-chevron-right:before {
 .hidden {
   display: none;
 }
+ol.hidden {
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+ol.active {
+  display: block;
+  transform: scale(1);
+  opacity: 1;
+  animation: anim 0.3s ease-in-out;
+}
 #tree li.hierarchy ol {
   padding-left: 20px;
+}
+#tree li.hierarchy > ol {
+  padding-left: 0;
+}
+ol ol > li.bottom-level {
+  margin-left: -20px;
+}
+.expander > h2 > i.fa-chevron-right {
+  -moz-transition: all .2s linear;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+.expanded > .expander > h2 > i.fa-chevron-right {
+  -ms-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+#tree > ol > li.expanded > .expander > h2 > i.fa-chevron-right {
+  transition: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+li.bottom-level.expanded a {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+.istitle {
+  position: absolute;
+  top: -16px;
+  background: 0;
+  left: 200px;
+  background-color: #003567;
+  /* padding: 0; */
+  border-radius: 0;
+  box-shadow: none;
+  width: auto;
+  border: 0;
+  color: white;
+}
+.istitle h2 {
+  line-height: 28px;
+}
+.istitle i {
+  font-size: 24px !important;
+  vertical-align: text-top;
+  margin-right: 13px;
+}
+.istitle i:before {
+  content: "\f060" !important;
+}
+p.teaser {
+  font-family: Oxygen;
+  line-height: 19px;
+  padding: 0px 10px 10px 0px;
+  color: rgba(0, 0, 0, 0.6);
 }
 button {
   margin-top: 10px;
   padding: 7px 15px;
+  background-color: #003567;
+  border: 0;
+  color: white;
+  display: block;
+  border-radius: 4px;
 }
 .popup-node {
   position: absolute;
@@ -323,6 +401,9 @@ button {
   -webkit-box-shadow: 9px 10px 5px -2px rgba(189, 187, 189, 0.55);
   -moz-box-shadow: 9px 10px 5px -2px rgba(189, 187, 189, 0.55);
   box-shadow: 9px 10px 5px -2px rgba(189, 187, 189, 0.55);
+  font-family: Oxygen;
+  font-weight: 100;
+  color: rgba(0, 0, 0, 0.6);
 }
 .popup-node i.fa-times {
   float: right;
@@ -330,4 +411,17 @@ button {
   position: relative;
   top: -20px;
   right: -20px;
+}
+.popup-node h1,
+.popup-node h2,
+.popup-node h3 {
+  margin-bottom: 10px;
+}
+.popup-node p {
+  line-height: 18px;
+  padding: 10px 10px 10px 0px;
+}
+.popup-node .chart {
+  min-height: 200px;
+  padding: 20px 0;
 }

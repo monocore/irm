@@ -101,14 +101,15 @@ table {
 body {
   width: 100%;
   background-color: #eef3f7;
-  font-family: "Avenir LT W01 35 Light", "Open Sans", sans-serif;
-  font-weight: normal;
+  font-family: "Avenir LT W01 35 Light", "Open Sans", "Oxygen", sans-serif;
+  font-weight: 100;
   color: #687d82;
 }
 
 a {
   color: #687d82;
 }
+
 h1, h2, h3 {
   font-size: 26px;
   font-weight: 200;
@@ -138,6 +139,9 @@ header {
     position: relative;
     top: -30px;
     color: #fff;
+  }
+  #title i {
+    margin-left: 10px;
   }
 }
 
@@ -175,7 +179,7 @@ a.detail {
   background-color: white;
   border-top: 1px solid #d9e2e9;
   display: block;
-  padding: 5px 20px;
+  padding: 7px 20px;
 }
 
 .status-green {
@@ -191,15 +195,16 @@ a.detail {
 }
 
 i {
-  margin-right: 4px;
+  margin-right: 10px;
   vertical-align: middle;
   font-size: 12px !important;
+  color: lightgrey;
 }
 
 li.hierarchy > a.expander {
   i.fa.fa-chevron-right {
     &:before {
-      content: "\f053" //chevron left
+      content: "\f078" //chevron down
     }
   }
 }
@@ -267,34 +272,147 @@ li.hierarchy > a.expander {
   display: none;
 }
 
+ol.hidden {
+  transform: scale(0);
+  transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+}
 
+ol.active {
+  display: block;
+  transform: scale(1);
+  opacity: 1;
+  animation: anim .3s ease-in-out;
+}
 
 #tree li.hierarchy {
   ol {
-      padding-left: 20px;
-  }  
+    padding-left: 20px;
+  }
+}
+
+//prevent adding on level 2
+#tree li.hierarchy > ol {
+  padding-left: 0;
+}
+
+//counter padding on deepest ol except top level
+ol ol > li.bottom-level {
+  margin-left: -20px;
+}
+
+//Toggling chevron
+.expander > h2 > i.fa-chevron-right {
+  -moz-transition: all .2s linear;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.expanded > .expander > h2 > i.fa-chevron-right {
+  -ms-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+#tree > ol > li.expanded > .expander > h2 > i.fa-chevron-right {
+  transition: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
+li.bottom-level.expanded {
+  //box-shadow: 0px 1px 2px 0px;
+  a {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+}
+
+//link is promoted to header bar
+.istitle {
+  position: absolute;
+  top: -16px;
+  background: 0;
+  left: 200px;
+  background-color: #003567;
+  /* padding: 0; */
+  border-radius: 0;
+  box-shadow: none;
+  width: auto;
+  border: 0;
+  color: white;
+
+  h2 {
+    line-height: 28px;
+  }
+
+  i {
+    font-size: 24px !important;
+    vertical-align: text-top;
+    margin-right: 13px;
+    &:before {
+      content: "\f060" !important; //arrow left
+    }
+  }
+
+}
+
+p.teaser {
+  font-family: Oxygen;
+  line-height: 19px;
+  padding: 0px 10px 10px 0px;
+  color: rgba(0, 0, 0, .6);
 }
 
 button {
-    margin-top: 10px;
-    padding: 7px 15px;
+  margin-top: 10px;
+  padding: 7px 15px;
+  background-color: #003567;
+  border: 0;
+  color: white;
+  display: block;
+  border-radius: 4px;
 }
 
 .popup-node {
-    position: absolute;
-    top: 35px;
-    left:35px;    
-    background-color: white;
-    border: 1px solid #e2e2e2;
-    padding: 40px;
-    -webkit-box-shadow: 9px 10px 5px -2px rgba(189,187,189,0.55);
-    -moz-box-shadow: 9px 10px 5px -2px rgba(189,187,189,0.55);
-    box-shadow: 9px 10px 5px -2px rgba(189,187,189,0.55);
-    i.fa-times {
-        float: right;        
-        font-size: 22px !important;
-        position: relative;
-        top: -20px;
-        right: -20px;
-    }    
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  background-color: white;
+  border: 1px solid #e2e2e2;
+  padding: 40px;
+  -webkit-box-shadow: 9px 10px 5px -2px rgba(189, 187, 189, 0.55);
+  -moz-box-shadow: 9px 10px 5px -2px rgba(189, 187, 189, 0.55);
+  box-shadow: 9px 10px 5px -2px rgba(189, 187, 189, 0.55);
+
+  i.fa-times {
+    float: right;
+    font-size: 22px !important;
+    position: relative;
+    top: -20px;
+    right: -20px;
+  }
+
+  //content
+
+  font-family: Oxygen;
+  font-weight: 100;
+  color: rgba(0, 0, 0, .6);
+
+  h1, h2, h3 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    line-height: 18px;
+    padding: 10px 10px 10px 0px;
+  }
+
+  .chart {
+    min-height: 200px;
+    padding: 20px 0;
+  }
 }

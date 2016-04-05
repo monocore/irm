@@ -30,8 +30,31 @@ var requestWrapper = function (opts) {
     }
 }
 
+var Header = {
+    view: function (controller) {
+        return m();
+    }
+}
+
+var Header = {
+    controller: function (data) {
+        return {
+            clickHandler: data.clickHandler,
+            link: data.link,
+            title: data.title
+        }
+    },
+    view: function (ctrl) {
+        return (m("a", {
+            onclick: function () {
+                ctrl.clickHandler();
+            }
+        }, ctrl.link));
+    }
+}
+
 var App = {
-    service: requestWrapper({method: "GET", url: "/json/data.json"}),    
+    service: requestWrapper({method: "GET", url: "/json/data.json"}),
     view: function () {
         return [
             drawPage(App.service.data),
@@ -64,18 +87,22 @@ var App = {
                                 m("a", {
                                     class: "big-a expander status-" + item.status,
                                     onclick: function () {
-                                        //hide all sibling li's
-                                        toggleSiblings(this.parentNode, this);
+                                        //hide sibling li's only on level 1
+                                        if (!nested) {
+                                            toggleSiblings(this.parentNode, this, item);
+                                        }
                                         //show the adjacent list(ol)
+                                        this.parentElement.classList.toggle("expanded");
+
                                         this.nextElementSibling.classList.toggle("hidden");
                                     }
-                                }, m("h2", m("i", {class:"fa fa-chevron-right"}), item.name)), drawNodes(item.children, true)
+                                }, m("h2", m("i", {class: "fa fa-chevron-right"}), item.name)), drawNodes(item.children, true)
                             );
                         }
                         else {
                             if (item.nid) {//expect teaser etc
                                 return drawEndNode(item);
-                            } else {                                
+                            } else {
                                 return m("li", m("a", {class: "big-a bottom-level status-" + item.status}, m("h2", item.name)));
                             }
                         }
@@ -84,10 +111,11 @@ var App = {
             }
         }
 
-        function drawEndNode(item) {            
+        function drawEndNode(item) {
             return m("li", {class: "bottom-level"},
                 m("a[href='javascript:;']", {
                         class: "detail expander", onclick: function () {
+                            this.parentElement.classList.toggle("expanded");
                             this.nextElementSibling.classList.toggle("hidden");
                         }
                     },
@@ -100,19 +128,24 @@ var App = {
                 ),
                 m("div", {class: "hidable hidden"},
                     m("div", {class: "row"},
-                        m("div", {class: "col1"}, m("p", item.teaser)),
-                        m("div", {class: "col2"}, drawHistory(item)),
-                        m("button", {onclick: function(){
-                            showNode(this.nextElementSibling, item.nid);
-                        }}, "details"),
-                            m("div", {class: "popup-node hidden"}, m("i", {class:"fa fa-times", onclick: function(){
-                                this.parentNode.classList.toggle("hidden");
-                            }}),
+                        m("div", {class: "col1"}, m("p", {class: "teaser"}, item.teaser),
+                            m("button", {
+                                onclick: function () {
+                                    showNode(this.nextElementSibling, item.nid);
+                                }
+                            }, "Details"),
+                            m("div", {class: "popup-node hidden"},
+                                m("i", {
+                                    class: "fa fa-times", onclick: function () {
+                                        this.parentNode.classList.toggle("hidden");
+                                    }
+                                }),
                                 m("div", {class: "content"})
-                            )                        
+                            )
+                        ),
+                        m("div", {class: "col2"}, drawHistory(item))
                     )
-                )               
-                
+                )
             );
         }
 
@@ -127,27 +160,28 @@ var App = {
     }
 }
 
-function toggleSiblings(el, current) {
+function toggleSiblings(el, current, item) {
     //If node only contains endnodes dont compress siblings
     if (current.nextSibling.children[0].classList.contains("bottom-level")) {
         return;
     }
-    var siblings  = el.parentNode.children;
-    for (var i=0; i < siblings.length; i++){
+    var siblings = el.parentNode.children;
+    for (var i = 0; i < siblings.length; i++) {
         siblings[i].classList.toggle("hidden");
     }
     el.classList.toggle("hidden");
     el.classList.toggle("hierarchy");
+    //move A from current li to header and back
+    el.firstElementChild.classList.toggle("istitle");
 }
 
 function showNode(element, nid) {
-    $(".content", element).load("/json/node-" + nid.toString() + ".html", function(){
+    $('.content', element).load("/json/node-" + nid.toString() + ".html", function () {
         element.classList.toggle("hidden");
-        height = $(window).height() -70;   // returns height of browser viewport        
-        width = $(window).width() -70;
-        $(element).css({"width" : width, "height" : height});
-        Chartist.Line('.ct-chart', data, options);        
+        height = $(window).height() - 70;   // returns height of browser viewport
+        width = $(window).width() - 70;
+        $(element).css({"width": width, "min-height": height, "height": "auto"});
     });
 }
 
-m.module(document.getElementById("main-container"), App);
+var app = m.module(document.getElementById("main-container"), App);
