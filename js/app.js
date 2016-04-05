@@ -121,7 +121,7 @@ var App = {
                     },
                     m("div", {class: "row"},
                         m("div", {class: "col1"},
-                            m("p", {class: "detail-title"}, item.name)),
+                            m("p", {class: "detail-title"}, m("i", {class: "fa fa-chevron-right"}), item.name)),
                         m("div", {class: "col2"},
                             m("span", {class: "status-detail " + item.status}))
                     )

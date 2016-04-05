@@ -57,7 +57,7 @@ table {
 @font-face {
   font-family: "Avenir LT W01 35 Light";
   src: url("../fonts/AvenirLTStd-Light.eot");
-  src: url("../fonts/AvenirLTStd-Light.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Light.woff") format("woff"), url("../font/AvenirLTStd-Light.ttf") format("truetype"), url("../font/AvenirLTStd-Light.svg#Avenir LT W01 35 Light") format("svg");
+  src: url("../fonts/AvenirLTStd-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTStd-Light.woff") format("woff"), url("../fonts/AvenirLTStd-Light.ttf") format("truetype"), url("../fonts/AvenirLTStd-Light.svg#Avenir LT W01 35 Light") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -65,7 +65,7 @@ table {
 @font-face {
   font-family: "Avenir LT W01 45 Book";
   src: url("../fonts/AvenirLTStd-Book.eot");
-  src: url("../fonts/AvenirLTStd-Book.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Book.woff") format("woff"), url("../font/AvenirLTStd-Book.ttf") format("truetype"), url("../font/AvenirLTStd-Book.svg#Avenir LT W01 45 Book") format("svg");
+  src: url("../fonts/AvenirLTStd-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTStd-Book.woff") format("woff"), url("../fonts/AvenirLTStd-Book.ttf") format("truetype"), url("../fonts/AvenirLTStd-Book.svg#Avenir LT W01 45 Book") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -73,7 +73,7 @@ table {
 @font-face {
   font-family: "Avenir LT W01 65 Medium";
   src: url("../fonts/AvenirLTStd-Medium.eot");
-  src: url("../fonts/AvenirLTStd-Medium.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Medium.woff") format("woff"), url("../font/AvenirLTStd-Medium.ttf") format("truetype"), url("../font/AvenirLTStd-Medium.svg#Avenir LT W01 65 Medium") format("svg");
+  src: url("../fonts/AvenirLTStd-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTStd-Medium.woff") format("woff"), url("../fonts/AvenirLTStd-Medium.ttf") format("truetype"), url("../fonts/AvenirLTStd-Medium.svg#Avenir LT W01 65 Medium") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -81,7 +81,7 @@ table {
 @font-face {
   font-family: "Avenir LT W01 85 Heavy";
   src: url("../fonts/AvenirLTStd-Heavy.eot");
-  src: url("../fonts/AvenirLTStd-Heavy.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Heavy.woff") format("woff"), url("../font/AvenirLTStd-Heavy.ttf") format("truetype"), url("../font/AvenirLTStd-Heavy.svg#Avenir LT W01 85 Heavy") format("svg");
+  src: url("../fonts/AvenirLTStd-Heavy.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTStd-Heavy.woff") format("woff"), url("../fonts/AvenirLTStd-Heavy.ttf") format("truetype"), url("../fonts/AvenirLTStd-Heavy.svg#Avenir LT W01 85 Heavy") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -89,7 +89,7 @@ table {
 @font-face {
   font-family: "Avenir LT W01 95 Black";
   src: url("../fonts/AvenirLTStd-Black.eot");
-  src: url("../fonts/AvenirLTStd-Black.eot?#iefix") format("embedded-opentype"), url("../font/AvenirLTStd-Black.woff") format("woff"), url("../font/AvenirLTStd-Black.ttf") format("truetype"), url("../font/AvenirLTStd-Black.svg#Avenir LT W01 95 Black") format("svg");
+  src: url("../fonts/AvenirLTStd-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTStd-Black.woff") format("woff"), url("../fonts/AvenirLTStd-Black.ttf") format("truetype"), url("../fonts/AvenirLTStd-Black.svg#Avenir LT W01 95 Black") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -144,6 +144,7 @@ header {
 #tree {
   padding: 5px 30px;
 }
+
 
 #tree > ol > li.bottom-level > a.detail,
 .big-a {
@@ -270,7 +271,7 @@ li.hierarchy > a.expander {
 
 #tree li.hierarchy {
   ol {
-    padding-left: 20px;
+    padding-left: 30px;
   }
 }
 
@@ -281,17 +282,19 @@ li.hierarchy > a.expander {
 
 //counter padding on deepest ol except top level
 ol ol > li.bottom-level {
-  margin-left: -20px;
+  margin-left: -30px;
 }
 
 //Toggling chevron
-.expander > h2 > i.fa-chevron-right {
+.expander > h2 > i.fa-chevron-right,
+.expander > .row > .col1 > p.detail-title > i.fa-chevron-right {
   -moz-transition: all .2s linear;
   -webkit-transition: all .2s linear;
   transition: all .2s linear;
 }
 
-.expanded > .expander > h2 > i.fa-chevron-right {
+.expanded > .expander > h2 > i.fa-chevron-right,
+.expanded > .expander > .row > .col1 > p.detail-title > i.fa-chevron-right {
   -ms-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
@@ -320,7 +323,7 @@ li.bottom-level.expanded {
   position: absolute;
   top: -16px;
   background: 0;
-  left: 200px;
+  left: 275px;
   background-color: #003567;
   /* padding: 0; */
   border-radius: 0;
