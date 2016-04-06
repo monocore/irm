@@ -129,11 +129,13 @@ var App = {
                 m("div", {class: "hidable hidden"},
                     m("div", {class: "row"},
                         m("div", {class: "col1"}, m("p", {class: "teaser"}, item.teaser),
-                            m("button", {
-                                onclick: function () {
-                                    showNode(this.nextElementSibling, item.nid);
-                                }
-                            }, "Details"),
+                            drawCharts(item),
+                            item.details === true ?
+                                m("button", {
+                                    onclick: function () {
+                                        showNode(this.nextElementSibling, item.nid);
+                                    }
+                                }, "Details") : "",
                             m("div", {class: "popup-node hidden"},
                                 m("i", {
                                     class: "fa fa-times", onclick: function () {
@@ -146,7 +148,8 @@ var App = {
                         m("div", {class: "col2"}, drawHistory(item))
                     )
                 )
-            );
+            )
+                ;
         }
 
         function drawHistory(item) {
@@ -156,6 +159,18 @@ var App = {
             return m("ol", item.statushistory.map(function (row) {
                 return m("li", {class: "status-detail-mini " + row.status}, row.period);
             }));
+        }
+
+        function drawCharts(item) {
+            if (item.hasOwnProperty("charts")) {
+                item.charts.map(function (chart) {
+                    return m("div", {
+                            id: chart.selector,
+                            class: "chart"
+                        }, Chartist.Line(chart.selector, chart.data, chart.options)
+                    );
+                })
+            }
         }
     }
 }

@@ -4,8 +4,757 @@
   "period": "Q3 2015",
   "tree": [
     {
+      "name": "Pensioenbeheer",
+      "tid": 34,
+      "status": "red",
+      "children": [
+        {
+          "name": "Communicatie met (individuele) deelnemers op initiatief deelnemer",
+          "tid": 34,
+          "status": "red",
+          "children": [
+            {
+              "name": "Telefonische helpdesk beantwoordt vragen tijdens werkdagen van 9.00 uur tot 17.00 uur.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "Telefonische bereikbaarheid (beller krijgt een medewerker aan de lijn)",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "red down",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "red"
+                }
+              ]
+            },
+            {
+              "name": "De overige telefonische vragen worden beantwoord binnen 2 werkdagen, tenzij de vraag te complex is.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "Indien de vraag te complex is om binnen twee werkdagen te beantwoorden, meldt de medewerker helpdesk dit aan de deelnemer en draagt zorg voor beantwoording binnen tien werkdagen en meldt deze termijn aan de deelnemer.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "Alle communicatie-uitingen geschieden in het Nederlands, niveau B1.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green up",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "red"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "Contacten met deelnemers worden door de betrokken medewerkers van TKP na elk contact vastgelegd in de contactenadministratie.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "red down",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "red"
+                }
+              ]
+            },
+            {
+              "name": "TKP stelt één keer per maand een medewerker beschikbaar voor een spreekuur in het land voor de beantwoording van vragen en verstrekken van informatie aan de deelnemers.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "TKP voort jaarlijkse een kwaliteitsmeting onder deelnemers uit. Deze meting richt zich op de ervaringen van deelnemers direct nadat er sprake is geweest van een contactmoment.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "red",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "red"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "red"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Klachtenregistratie en afhandeling",
+          "tid": 34,
+          "status": "red",
+          "children": [
+            {
+              "name": "TKP voorziet in een klachtenregistratie (onderwerp, aantal, afhandeling) omtrent de uitvoering van de regeling en informeert het PF hieromtrent per kwartaal.",
+              "tid": 0,
+              "details": false,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "charts": [
+                {
+                  "selector": "#myChart-1",
+                  "type": "line",
+                  "data": {
+                    "labels": ["1", "2", "3", "4", "5", "6"],
+                    "series": [
+                      {
+                        "data": [1, 2, 3, 5, 8, 13]
+                      }
+                    ]
+                  },
+                  "options": {}
+                }
+              ],
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "De Deelnemers ontvangen binnen één week een schriftelijke bevestiging dat hun klacht in behandeling is genomen. Klachten van Deelnemers worden binnen twintig werkdagen behandeld. Indien klachten niet binnen deze termijn kunnen worden afgehandeld, wordt de Deelnemer hiervan op de hoogte gesteld onder vermelding van de termijn van afhandeling.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "red down",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "red"
+                }
+              ]
+            },
+            {
+              "name": "Incidenten worden zo spoedig mogelijk gemeld aan het PF.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "TKP voert een jaarlijkse analyse uit op de ontvangen klachten om zo nodig de dienstverlening te kunnen verbeteren.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Procesbehandeling",
+          "tid": 34,
+          "status": "green",
+          "children": [
+            {
+              "name": "Het PF zorgt ervoor dat de aanlevering van de mutaties in de relevante werknemersgegevens door de werkgever geschiedt conform de data zoals in het jaarlijks overeen te komen productieschema staan vermeld.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "Jaarlijks wordt voor 1 april door TKP controle verricht op de juistheid en volledigheid van de gegevensaanlevering. Aan de hand van een door TKP opgegeven beperkt aantal essentiële parameters wordt het bestand van het PF door TKP vergeleken met een bestand van UWV. De verschillen worden gecommuniceerd aan UWV. Eventuele verschillen worden door UWV verklaard en waar nodig verbeterd.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "red down",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "red"
+                }
+              ]
+            },
+            {
+              "name": "Jaarlijks, voor 1 april, wordt door het pensioenfonds een accountantsverklaring met betrekking tot de juistheid en volledigheid van de gegevensaanlevering over het afgelopen boekjaar aan TKP geleverd.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "Naam, adres en woonplaatsgegevens (NAW) van Deelnemers woonachtig in Nederland worden door TKP aangevraagd via de gemeentelijke basisadministratie persoonsgegevens. Het PF zorgt er voor dat adresgegevens van mensen die niet in Nederland wonen maar wel in dienst zijn bij de werkgever, door de werkgever aan TKP worden aangeleverd. Voor mensen die niet in Nederland wonen en niet in dienst zijn bij de werkgever, levert het PF aan TKP het laatst bekende of doorgegeven adres.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "De door de werkgever maandelijks aan het PF aangeleverde werknemersgegevens worden binnen 10 werkdagen na ontvangst verwerkt in de administratie van TKP en zijn dan raadpleegbaar in het pensioenadministratiesysteem ten behoeve van de uitvoering, mits de kwaliteit van de aangeleverde gegevens toereikend is.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "TKP rapporteert op kwartaalbasis in dit verslag over de tijdigheid van de aanlevering, de verwerking van de aangeleverde gegevens en het uitvalpercentage (kwaliteit aanlevering). Aandachtspunten en mogelijke verbeteringen en bijzonderheden worden gemeld.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "Op kwartaalbasis voert TKP overleg met UWV over gegevensaanlevering. Overleg kan onder andere betrekking hebben op eventuele geconstateerde verstoringen in de gegevensaanlevering. Een afschrift van het verslag van dit overleg wordt aan het PF verstrekt.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Klachtenregistratie en afhandeling",
+          "tid": 34,
+          "status": "red",
+          "children": [
+            {
+              "name": "TKP voorziet in een klachtenregistratie (onderwerp, aantal, afhandeling) omtrent de uitvoering van de regeling en informeert het PF hieromtrent per kwartaal.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "De Deelnemers ontvangen binnen één week een schriftelijke bevestiging dat hun klacht in behandeling is genomen. Klachten van Deelnemers worden binnen twintig werkdagen behandeld. Indien klachten niet binnen deze termijn kunnen worden afgehandeld, wordt de Deelnemer hiervan op de hoogte gesteld onder vermelding van de termijn van afhandeling.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "red down",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "red"
+                }
+              ]
+            },
+            {
+              "name": "Incidenten worden zo spoedig mogelijk gemeld aan het PF.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "TKP voert een jaarlijkse analyse uit op de ontvangen klachten om zo nodig de dienstverlening te kunnen verbeteren.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Indiensttreding en ingaande waardeoverdrachten",
+          "tid": 34,
+          "status": "green",
+          "children": [
+            {
+              "name": "Binnen de wettelijke termijnen stuurt TKP bij de startbrief bij indiensttreding een formulier aan de Deelnemer om het proces van individuele waardeoverdracht te starten.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "green",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "green"
+                }
+              ]
+            },
+            {
+              "name": "Inkomende waardeoverdrachten worden, voor zover TKP niet afhankelijk is van derden, binnen de wettelijke termijnen afgehandeld.",
+              "tid": 0,
+              "details": true,
+              "nid": 123,
+              "status": "red down",
+              "teaser": "",
+              "statushistory": [
+                {
+                  "period": "Q4 2014",
+                  "status": "red"
+                },
+                {
+                  "period": "Q1 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q2 2015",
+                  "status": "green"
+                },
+                {
+                  "period": "Q3 2015",
+                  "status": "red"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pensioenadministratie",
+      "tid": 34
+    },
+    {
+      "name": "Uitkeringenadministratie",
+      "tid": 34
+    },
+    {
+      "name": "Fondscommunicatie",
+      "tid": 34
+    },
+    {
+      "name": "Werkgeversadministratie",
+      "tid": 34
+    },
+    {
+      "name": "Klachten",
+      "tid": 34
+    },
+    {
+      "name": "Communicatie Algemeen",
+      "status": "green",
+      "tid": 0
+    },
+    {
+      "name": "Accountmanagement",
+      "tid": 34
+    },
+    {
+      "name": "Secretariële ondersteuning",
+      "tid": 34
+    },
+    {
+      "name": "Actuariële ondersteuning",
+      "tid": 34
+    },
+    {
+      "name": "Kwaliteitscriteria",
+      "tid": 34
+    },
+    {
       "name": "Diensten ten behoeve van werkgevers",
       "tid": 34,
+      "details": true,
       "nid": 234,
       "status": "red down",
       "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
@@ -36,7 +785,7 @@
         {
           "name": "Registratie en pensioenaanspraken",
           "tid": 45,
-          "status" : "red",
+          "status": "red",
           "children": [
             {
               "name": "Verwerken deelnemersgegevens",
@@ -51,6 +800,7 @@
                 {
                   "name": "sub categorie I",
                   "tid": 0,
+                  "details": true,
                   "nid": 123,
                   "status": "red down",
                   "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
@@ -76,6 +826,7 @@
                 {
                   "name": "sub categorie II",
                   "tid": 0,
+                  "details": true,
                   "nid": 124,
                   "status": "red",
                   "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
@@ -101,6 +852,7 @@
                 {
                   "name": "sub categorie III",
                   "tid": 0,
+                  "details": true,
                   "nid": 125,
                   "status": "green up",
                   "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
@@ -126,6 +878,7 @@
                 {
                   "name": "sub categorie IV",
                   "tid": 0,
+                  "details": true,
                   "nid": 126,
                   "status": "green",
                   "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
@@ -164,13 +917,9 @@
       "tid": 0
     },
     {
-      "name": "Communicatie",
-      "status": "green",
-      "tid": 0
-    },
-    {
       "name": "Algemene kwaliteitscriteria",
       "tid": 0,
+      "details": true,
       "nid": 234,
       "status": "red down",
       "teaser": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
