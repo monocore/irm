@@ -244,7 +244,7 @@ li.hierarchy > a.expander {
 
 /* Grid ?*/
 .col1 {
-  width: 85%;
+  width: 80%;
   float: left;
 }
 
@@ -287,18 +287,24 @@ ol ol > li.bottom-level {
 
 //Toggling chevron
 .expander > h2 > i.fa-chevron-right,
-.expander > .row > .col1 > p.detail-title > i.fa-chevron-right {
+.expander > i.fa-chevron-right {
   -moz-transition: all .2s linear;
   -webkit-transition: all .2s linear;
   transition: all .2s linear;
 }
 
 .expanded > .expander > h2 > i.fa-chevron-right,
-.expanded > .expander > .row > .col1 > p.detail-title > i.fa-chevron-right {
+.expanded > .expander > i.fa-chevron-right {
   -ms-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
+}
+
+.expander > i.fa-chevron-right {
+  float: left;
+  padding: 10px 5px;
+  margin-left: 5px;
 }
 
 #tree > ol > li.expanded > .expander > h2 > i.fa-chevron-right {

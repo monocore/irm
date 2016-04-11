@@ -29,6 +29,7 @@ var requestWrapper = function(opts) {
             });
     }
 }
+var ChartData;
 
 var Header = {
     view: function(controller) {
@@ -119,9 +120,10 @@ var App = {
                         this.nextElementSibling.classList.toggle("hidden");
                     }
                 },
+                    m("i", { class: "fa fa-chevron-right" }),
                     m("div", { class: "row" },
                         m("div", { class: "col1" },
-                            m("p", { class: "detail-title" }, m("i", { class: "fa fa-chevron-right" }), item.name)),
+                            m("p", { class: "detail-title" }, item.name)),
                         m("div", { class: "col2" },
                             m("span", { class: "status-detail " + item.status }))
                     )
@@ -130,6 +132,7 @@ var App = {
                     m("div", { class: "row" },
                         m("div", { class: "col1" }, m("p", { class: "teaser" }, item.teaser),
                             drawCharts(item),
+                            //item.hasOwnProperty("charts") ? m.component(mChart, {data: item.charts[0]}) : "",
                             function() {
                                 if (item.details === true) {
                                     return [
@@ -165,26 +168,15 @@ var App = {
             }));
         }
 
-        function drawCharts(item) {
-            var returnM = [];
-            //return m("div", {id: item[0].selector, config: drawChart(item[0]) })
+        function drawCharts(item){
+            var charts = [];
             if (item.hasOwnProperty("charts")) {
-                item.charts.forEach(function(chart) {
-                    console.log(chart);
-                    //returnM.push(m(chart.selector, { config: drawChart(chart) }));
-                    return m(chart.selector, { config: drawChart(chart) })
-                });
+                /*item.charts.forEach(function(chart){
+                    charts.push(m.component(mChart, {data: chart}));
+                });*/
+                return m.component(mChart, {data: item.charts[0]});
+                //return charts;
             }
-            return returnM;
-        }
-
-        function drawChart(chart) {
-            return function(elem) {
-                m.startComputation();
-                var chart = Chartist.Line(chart.selector, chart.data, chart.options);
-                m.endComputation();
-            }
-
         }
     }
 }
@@ -213,11 +205,11 @@ function showNode(element, nid) {
     });
 }
 //See https://lhorie.github.io/mithril/integration.html
-var mChartist = {
+var mChart = {
     //Returns a chart
     view: function(ctrl, attrs) {
         //Create a chartist chart
-        return m("div", {config: mChartist.config(attrs) });
+        return m("div", {id: attrs.data.selector, config: mChart.config(attrs) });
     },
     /**
     Chartist config factory. The params in this doc refer to properties of the `ctrl` argument
@@ -226,14 +218,15 @@ var mChartist = {
     */    
     config: function(ctrl) {
         return function(element, isInitialized) {
-            if (typeof Chartist !== 'undefined') {
+            if (typeof Highcharts !== 'undefined') {
                 if (!isInitialized) {
                     m.startComputation();
-                    Chartist.Line(element, ctrl.data, ctrl.options);
+                    var chart = Highcharts.chart(element, ctrl.data.options);
                     m.endComputation();
+
                 }                
             } else {
-                console.warn('ERROR: You need Chartist in the page');
+                console.warn('ERROR: You need highcharts(.com) in the page');
             }
         };
     }
