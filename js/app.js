@@ -1,3 +1,6 @@
+/**
+ * Service wrapper
+ */
 var requestWrapper = function(opts) {
     return new function() {
         me = this;
@@ -29,31 +32,11 @@ var requestWrapper = function(opts) {
             });
     }
 }
-var ChartData;
 
-var Header = {
-    view: function(controller) {
-        return m();
-    }
-}
-
-var Header = {
-    controller: function(data) {
-        return {
-            clickHandler: data.clickHandler,
-            link: data.link,
-            title: data.title
-        }
-    },
-    view: function(ctrl) {
-        return (m("a", {
-            onclick: function() {
-                ctrl.clickHandler();
-            }
-        }, ctrl.link));
-    }
-}
-
+/**
+ * Application namespace for the mithril view
+ * Not using a controller now only using the output of the data service
+ */
 var App = {
     service: requestWrapper({ method: "GET", url: "json/data.json" }),
     view: function() {
@@ -75,10 +58,10 @@ var App = {
             ]
         }
 
-        function drawNodes(children, nested) {
-            if (nested) {
-                App.nestLevel++;
-            }
+        /**
+         * Recursive function to iterate the data tree.
+         */
+        function drawNodes(children, nested) {            
             if (children) {
                 var hidden = nested ? "hidden" : "";
                 return m("ol", { class: "level " + hidden },
@@ -111,7 +94,9 @@ var App = {
                 );
             }
         }
-
+        /**
+         * Draw a detail node with texts and a ajax loader for html fragments from the drupal body field
+         */
         function drawEndNode(item) {
             return m("li", { class: "bottom-level" },
                 m("a[href='javascript:;']", {
@@ -158,7 +143,9 @@ var App = {
                 )
             );
         }
-
+        /**
+         * Draw the small history navigator with statuses which is a static list for now
+         */
         function drawHistory(item) {
             if (!App.service.success) {
                 return;
@@ -167,7 +154,9 @@ var App = {
                 return m("li", { class: "status-detail-mini " + row.status }, row.period);
             }));
         }
-
+        /**
+         * Render the highcharts charts using the custom created mChart component
+         */
         function drawCharts(item){
             var charts = [];
             if (item.hasOwnProperty("charts")) {
@@ -204,7 +193,11 @@ function showNode(element, nid) {
         $(element).css({ "width": width, "min-height": height, "height": "auto" });
     });
 }
-//See https://lhorie.github.io/mithril/integration.html
+/**
+ * Mithril component "wrapper" for the highcharts component
+ * See https://lhorie.github.io/mithril/integration.html 
+ */
+
 var mChart = {
     //Returns a chart
     view: function(ctrl, attrs) {
