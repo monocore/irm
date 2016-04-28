@@ -1,0 +1,269 @@
+{
+    "logo": "",
+    "title": "SLA",
+    "period": "Q1 2016",
+    "tree": [
+        {
+            "name": "Pensioenbeheer",
+            "tid": "1",
+            "status": "green",
+            "children": [
+                {
+                    "name": "Klachtenregistratie en afhandeling",
+                    "tid": "22",
+                    "status": "green",
+                    "children": [
+                        {
+                            "name": "Schriftelijke bevestiging",
+                            "tid": "24",
+                            "details": true,
+                            "nid": "56",
+                            "teaser": "Antehabeo appellatio dolor te. Abdo damnum dolor exerci mos proprius singularis vicis zelus. Brevitas eligo neque nostrud occuro paratus quae turpis.\n\n",
+                            "status": "green"
+                        },
+                        {
+                            "name": "Melding incidenten",
+                            "tid": "25",
+                            "details": true,
+                            "nid": "65",
+                            "teaser": "Amet esca genitus iaceo interdico loquor qui suscipit. Commoveo inhibeo luctus nobis sit vereor virtus. Abbas amet consequat jugis lucidus paulatim premo quae quidne scisco. Brevitas ideo ulciscor. Autem commodo cui gemino humo mos refoveo si sudo tamen. Laoreet lucidus luptatum vulpes. Dolor elit hendrerit incassum loquor melior nimis quibus.\n\nLetalis tum virtus. Augue nulla quadrum tum utrum. Aliquip damnum genitus pneum utinam. Bene ille tation. Adipiscing antehabeo dolus ex feugiat in incassum ludus vereor.\n\nAliquam comis damnum laoreet pala refoveo wisi. Caecus eros feugiat laoreet neque praesent quidne vero. Appellatio duis inhibeo magna minim persto populus similis valde. At erat ex lucidus neo proprius. Defui luptatum mauris pala quis tincidunt virtus.\n\nAppellatio blandit elit hendrerit plaga pneum ratis typicus. Ad genitus nobis quae volutpat ymo. Defui iaceo ibidem nunc paulatim ratis si. Haero melior premo si usitas uxor. Consectetuer ex facilisi iriure lobortis pneum quadrum suscipit ulciscor verto. Caecus dolor ulciscor voco.\n\nAccumsan diam exerci fere hendrerit ille loquor mos paulatim refero. Duis neo nisl veniam. Consectetuer tamen torqueo turpis. Decet exputo iaceo ibidem neo paulatim quadrum ullamcorper valetudo. Nulla quidne quis. Capto modo mos pecus scisco venio vereor vero. Abico jugis ludus paratus praesent.\n\nDiam gemino ibidem iusto letalis refero secundum. Acsi eros facilisi huic pneum. Autem euismod meus nisl quibus torqueo venio virtus. Accumsan appellatio comis dolor dolore interdico luptatum tamen vel verto.\n\n",
+                            "status": "green"
+                        },
+                        {
+                            "name": "Jaarlijkse analyse",
+                            "tid": "26",
+                            "status": "gray"
+                        },
+                        {
+                            "name": "Uitvoering klachtenafhandeling",
+                            "tid": "23",
+                            "status": "gray"
+                        }
+                    ]
+                },
+                {
+                    "name": "Communicatie met (individuele) deelnemers op initiatief deelnemer",
+                    "tid": "21",
+                    "status": "gray",
+                    "children": [
+                        {
+                            "name": "Helpdesk openingstijden",
+                            "tid": "12",
+                            "status": "gray"
+                        },
+                        {
+                            "name": "Bereikbaarheid",
+                            "tid": "14",
+                            "status": "gray"
+                        },
+                        {
+                            "name": "Direct beantwoord",
+                            "tid": "13",
+                            "status": "gray"
+                        },
+                        {
+                            "name": "Antwoord binnen 2 werkdagen",
+                            "tid": "15",
+                            "status": "gray"
+                        },
+                        {
+                            "name": "Antwoord binnen 10 werkdagen",
+                            "tid": "16",
+                            "status": "gray",
+                            "children": [
+                                {
+                                    "name": "Test level 3",
+                                    "tid": "27",
+                                    "status": "gray"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Pensioenadministratie",
+            "tid": "2",
+            "status": "gray",
+            "children": [
+                {
+                    "name": "Spreekuur",
+                    "tid": "19",
+                    "status": "gray",
+                    "children": [
+                        {
+                            "name": "Contactadministratie",
+                            "tid": "18",
+                            "status": "gray",
+                            "children": [
+                                {
+                                    "name": "Nederlandse taal",
+                                    "tid": "17",
+                                    "status": "gray"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Uitkeringenadministratie",
+            "tid": "3",
+            "status": "gray"
+        },
+        {
+            "name": "Fondscommunicatie",
+            "tid": "4",
+            "status": "gray"
+        },
+        {
+            "name": "Werkgeversadministratie",
+            "tid": "5",
+            "status": "gray"
+        },
+        {
+            "name": "Klachten",
+            "tid": "6",
+            "status": "gray"
+        },
+        {
+            "name": "Communicatie algemeen",
+            "tid": "7",
+            "status": "gray"
+        },
+        {
+            "name": "Accountmanagement",
+            "tid": "8",
+            "details": true,
+            "nid": "71",
+            "teaser": "Ideo nimis rusticus tego utrum vicis. Pala praemitto proprius. Acsi ex iriure lenis proprius typicus valetudo. Aliquip cui luptatum praemitto premo. Euismod jumentum molior oppeto pneum. Abico dolore duis et immitto importunus imputo saepius similis utinam.\n\nDolor enim ludus refoveo ulciscor volutpat. Ad appellatio dolus loquor lucidus macto neo. Huic in jugis minim occuro patria typicus valetudo verto virtus. Esse gilvus hos illum oppeto populus qui ulciscor verto. Abluo commoveo damnum quadrum quidne refero turpis. Ad autem causa mos si. Aliquip blandit enim ille jugis lenis vel. Conventio hos molior paulatim quia refero tamen.\n\nBrevitas enim esse iustum mos neque quae. Commoveo odio similis suscipere. Defui duis mauris pecus virtus. Conventio gravis lucidus. Bene defui esse facilisis praesent probo refero sagaciter. Acsi gravis tamen tum utrum. Abdo causa conventio modo roto vindico. Conventio elit pala quae turpis. Amet autem olim populus. Inhibeo iusto lobortis macto ratis rusticus utrum verto virtus. Aliquip dolore duis exerci facilisi nostrud nutus rusticus sit te.\n\n",
+            "status": "green"
+        },
+        {
+            "name": "Secretari\u00eble ondersteuning",
+            "tid": "9",
+            "status": "gray"
+        },
+        {
+            "name": "Actuari\u00eble ondersteuning",
+            "tid": "10",
+            "details": true,
+            "nid": "94",
+            "teaser": "Erat ludus refoveo. Imputo lucidus neo nisl sudo suscipit. Camur ibidem quia. Cogo hos occuro.\n\nAugue esse immitto incassum jugis lucidus premo roto similis veniam. Dolore importunus mauris. Blandit commodo dolore elit huic iusto oppeto roto valde validus.\n\nCogo dolor gemino huic illum scisco sit ut utrum vulpes. Loquor sed sit torqueo. Facilisis humo sudo. Duis praesent secundum torqueo. Abdo cui enim ille importunus nunc refoveo saluto tamen valetudo. Camur capto damnum esca haero jumentum lobortis luptatum quis uxor.\n\nAugue hendrerit lenis vereor. Dolore quidem ut vindico. Fere gravis vel. Amet gemino macto paratus qui quibus quidne tego ullamcorper. Quae utinam valetudo. Dolore facilisi secundum sino valde virtus. Abigo distineo ea melior metuo nunc quia si ulciscor vero. Eligo rusticus suscipit wisi.\n\nImportunus occuro typicus. Capto causa elit ibidem magna mauris meus nobis tum. Autem consectetuer gravis loquor pecus verto.\n\nEros esse feugiat in scisco tamen veniam. Ideo in obruo occuro populus roto ut. Abbas abico abluo autem gemino odio paratus patria premo validus. Acsi capto ibidem immitto lenis luctus sino torqueo velit. Abluo appellatio inhibeo neo nimis occuro probo vero. Elit eum ille meus occuro pertineo. Humo illum iusto modo pecus proprius sudo.\n\nAntehabeo commodo esca nibh praemitto rusticus sed vindico. Gravis jus letalis lobortis natu persto pneum praemitto quibus secundum. Oppeto si tum vulputate. Defui erat illum imputo neque praemitto rusticus suscipit tego ullamcorper. Blandit dolor ibidem incassum iustum nisl nulla quidem sino. Esse lucidus oppeto quidne sino. Abigo aliquam aliquip amet camur commodo hendrerit iriure jus nutus.\n\nAliquam commoveo genitus natu nostrud pertineo singularis tincidunt. Decet exerci feugiat gemino magna occuro premo valetudo. Accumsan acsi capto euismod probo utinam voco vulpes.\n\n",
+            "status": "green"
+        },
+        {
+            "name": "Kwaliteitscriteria",
+            "tid": "11",
+            "status": "gray"
+        },
+        {
+            "name": "Kwaliteitsmeting",
+            "tid": "20",
+            "details": true,
+            "nid": "80",
+            "teaser": "Duis mauris occuro persto praemitto quidne saluto sed turpis. Abico amet eros gemino humo nutus quibus sino.\r\n\r\nComis esse eum ludus minim praesent similis sudo vel veniam. Gemino humo paratus praemitto suscipere zelus. Incassum praesent proprius saepius valde. Ad appellatio consectetuer exputo facilisi probo rusticus sagaciter si vero. Amet facilisis haero nisl premo. Abdo nutus quidne ut vel. Abdo acsi autem duis exerci praesent tego utinam validus. Autem damnum eligo euismod haero humo ibidem lobortis macto melior.\r\n\r\nDolore dolus nobis usitas. Abdo adipiscing consequat ea fere genitus laoreet macto magna vulputate. At erat et ibidem populus quibus rusticus singularis vicis. Acsi autem distineo elit eu praesent rusticus ullamcorper zelus. Consectetuer eligo eum importunus quidem. Acsi ad camur facilisis neo nulla uxor.\r\n\r\nBrevitas causa decet humo lucidus sed ullamcorper venio. Jus letalis mauris populus qui scisco singularis verto volutpat. Ea iriure similis tincidunt vicis. Elit ex similis. Comis enim humo ibidem loquor meus utrum uxor vicis vindico. Amet commodo consequat eu mauris metuo sudo tincidunt uxor. Abluo acsi caecus distineo hendrerit huic iusto occuro pertineo si.\r\n\r\nAbbas abico dolor dolus euismod ex loquor mos ratis sed. Diam exputo lobortis sed tamen te. Caecus huic plaga pneum quae usitas validus volutpat. Autem caecus sagaciter tincidunt ullamcorper utrum velit. Capto eligo secundum. Magna neque scisco ut vulputate. Decet dolor iriure luctus mos os quadrum saluto ymo.\r\n\r\n",
+            "status": "green",
+            "charts": [
+                {
+                    "options": {
+                        "chart": {
+                            "type": "line",
+                            "inverted": true,
+                            "renderTo": {
+                                "__EV_STORE_KEY@7": {}
+                            }
+                        },
+                        "xAxis": [
+                            {
+                                "type": "category",
+                                "index": 0,
+                                "isX": true
+                            }
+                        ],
+                        "yAxis": [
+                            {
+                                "index": 0
+                            }
+                        ],
+                        "series": [
+                            {
+                                "type": "line",
+                                "animation": false,
+                                "data": [
+                                    {
+                                        "y": 1
+                                    },
+                                    {
+                                        "y": 3
+                                    },
+                                    {
+                                        "y": 5
+                                    },
+                                    {
+                                        "y": 7
+                                    },
+                                    {
+                                        "y": 10
+                                    },
+                                    {
+                                        "y": 4
+                                    }
+                                ],
+                                "name": "Green",
+                                "_colorIndex": 0,
+                                "_symbolIndex": 0
+                            },
+                            {
+                                "type": "line",
+                                "animation": false,
+                                "data": [
+                                    {
+                                        "y": 2
+                                    },
+                                    {
+                                        "y": 4
+                                    },
+                                    {
+                                        "y": 5
+                                    },
+                                    {
+                                        "y": 8
+                                    },
+                                    {
+                                        "y": 12
+                                    },
+                                    {
+                                        "y": 5
+                                    }
+                                ],
+                                "name": "Red",
+                                "_colorIndex": 1,
+                                "_symbolIndex": 1
+                            }
+                        ]
+                    }
+                }
+            ],
+            "statushistory": [
+                {
+                    "period": "Q4 2015",
+                    "status": "green",
+                    "nid": "69"
+                },
+                {
+                    "period": "Q3 2015",
+                    "status": "green",
+                    "nid": "74"
+                },
+                {
+                    "period": "Q2 2015",
+                    "status": "green",
+                    "nid": "58"
+                }
+            ]
+        }
+    ]
+}

@@ -38,7 +38,8 @@ var requestWrapper = function(opts) {
  * Not using a controller now only using the output of the data service
  */
 var App = {
-    service: requestWrapper({ method: "GET", url: "json/data.json" }),
+    service: requestWrapper({ method: "GET", url: "/bestuursrapportage/json/1/2016/Q1" }),
+        
     view: function() {
         return [
             drawPage(App.service.data),
@@ -97,7 +98,7 @@ var App = {
         /**
          * Draw a detail node with texts and a ajax loader for html fragments from the drupal body field
          */
-        function drawEndNode(item) {
+        function drawEndNode(item) {            
             return m("li", { class: "bottom-level" },
                 m("a[href='javascript:;']", {
                     class: "detail expander", onclick: function() {
@@ -115,15 +116,13 @@ var App = {
                 ),
                 m("div", { class: "hidable hidden" },
                     m("div", { class: "row" },
-                        m("div", { class: "col1" }, m("p", { class: "teaser" }, item.teaser),
-                            drawCharts(item),
-                            //item.hasOwnProperty("charts") ? m.component(mChart, {data: item.charts[0]}) : "",
-                            function() {
+                        m("div", { class: "col1" }, m("p", { class: "teaser" }, item.teaser),                                                        
+                            function() {                                
                                 if (item.details === true) {
                                     return [
                                         m("button", {
                                             onclick: function() {
-                                                showNode(this.nextElementSibling, item.nid);
+                                                showNode(this.nextElementSibling, item.nid, item);
                                             }
                                         }, "Details"),
                                         m("div", { class: "popup-node hidden" },
@@ -135,6 +134,9 @@ var App = {
                                             m("div", { class: "content" })
                                         )
                                     ]
+                                } else {
+                                    //Only draw chart if details is false                                    
+                                    return m("div", {id : "chart-" + item.nid}, drawCharts(item));
                                 }
                             } ()
                         ),
@@ -150,16 +152,31 @@ var App = {
             if (!App.service.success) {
                 return;
             }
-            return m("ol", item.statushistory.map(function(row) {
-                return m("li", { class: "status-detail-mini " + row.status }, row.period);
-            }));
+            if (item.hasOwnProperty("statushistory")) {
+                return m("ol", item.statushistory.map(function(row) {                
+                    return m("li", { class: "status-detail-mini " + row.status }, m("a", { href: "#", onclick: function(){
+                        //Call shownode without item so it will retrieve it's own teaser, title, chart, status etc.
+                        showNode(this.nextElementSibling, row.nid);
+                    }}, row.period),
+                        m("div", { class: "popup-node hidden" },
+                            m("i", {
+                                class: "fa fa-times", onclick: function() {
+                                    this.parentNode.classList.toggle("hidden");
+                                }
+                            }),
+                            m("div", { class: "content" })
+                        )
+                    );
+                }));
+            }
         }
         /**
          * Render the highcharts charts using the custom created mChart component
+         * ToDo allow multiple charts
          */
-        function drawCharts(item){
+        function drawCharts(item){            
             var charts = [];
-            if (item.hasOwnProperty("charts")) {
+            if (item.hasOwnProperty("charts")) {                
                 /*item.charts.forEach(function(chart){
                     charts.push(m.component(mChart, {data: chart}));
                 });*/
@@ -185,13 +202,50 @@ function toggleSiblings(el, current, item) {
     el.firstElementChild.classList.toggle("istitle");
 }
 
-function showNode(element, nid) {
-    $('.content', element).load("json/node-" + nid.toString() + ".html", function() {
-        element.classList.toggle("hidden");
-        height = $(window).height() - 70;   // returns height of browser viewport
-        width = $(window).width() - 70;
-        $(element).css({ "width": width, "min-height": height, "height": "auto" });
+/**
+ *
+ * @param element target for node content
+ * @param nid
+ * @param item Object, optional
+ */
+function showNode(element, nid, item) {
+    var chart_id, options;
+    $('.content', element).load("/bestuursrapportage/content/" + nid.toString(), function(response, status, xhr) {
+        if (status == 'error') {
+            console.log("Error loading node");
+        } else {
+            //If item not available, load from service
+            if (item === undefined) {
+                $.getJSON("/betuursrapportage/json/node/" + nid, function(data){
+                    item = data;
+                    renderNode(element, item);
+                });
+            } else {
+                renderNode(element, item);
+            }
+        }
     });
+}
+
+function renderNode(element, item){
+    height = $(window).height() - 10;   // returns height of browser viewport
+    width = $(window).width() - 10;
+    $(element).css({ "width": width, "min-height": height, "height": "auto" });
+    element.classList.toggle("hidden");
+    //Insert chart if available
+    if (item.hasOwnProperty("charts")) {
+        //insert after h1
+        chart_id = "chart-" + nid;
+        var hc = document.createElement("div");
+        hc.setAttribute("id", chart_id);
+        $(hc).insertAfter(".content h1");
+        //Apply the highchart
+        Highcharts.chart(chart_id, item.charts[0].options);
+    }
+    //Insert teaser
+    if (item.hasOwnProperty("teaser")) {
+        $('<span class="teaser>').add("<p>" + item.teaser + "</p>").insertAfter(".content h1");
+    }
 }
 /**
  * Mithril component "wrapper" for the highcharts component
@@ -201,11 +255,11 @@ function showNode(element, nid) {
 var mChart = {
     //Returns a chart
     view: function(ctrl, attrs) {
-        //Create a chartist chart
+        //Create a chartist chart        
         return m("div", {id: attrs.data.selector, config: mChart.config(attrs) });
     },
     /**
-    Chartist config factory. The params in this doc refer to properties of the `ctrl` argument
+    Highcharts config factory. The params in this doc refer to properties of the `ctrl` argument
     @param {Object} data - the data with which to populate the chart
     @param {Object} options - the options object with the chart configurations    
     */    
@@ -213,13 +267,13 @@ var mChart = {
         return function(element, isInitialized) {
             if (typeof Highcharts !== 'undefined') {
                 if (!isInitialized) {
-                    m.startComputation();
+                    m.startComputation();                    
                     var chart = Highcharts.chart(element, ctrl.data.options);
                     m.endComputation();
 
                 }                
             } else {
-                console.warn('ERROR: You need highcharts(.com) in the page');
+                console.warn('ERROR: You need highcharts in the page');
             }
         };
     }

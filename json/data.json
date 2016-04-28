@@ -23,19 +23,23 @@
               "statushistory": [
                 {
                   "period": "Q4 2014",
-                  "status": "red"
+                  "status": "red",
+                  "nid": 1024
                 },
                 {
                   "period": "Q1 2015",
-                  "status": "green"
+                  "status": "green",
+                  "nid": 1025
                 },
                 {
                   "period": "Q2 2015",
-                  "status": "green"
+                  "status": "green",
+                  "nid": 1026
                 },
                 {
                   "period": "Q3 2015",
-                  "status": "green"
+                  "status": "green",
+                  "nid": 1027
                 }
               ]
             },
@@ -153,19 +157,23 @@
               "statushistory": [
                 {
                   "period": "Q4 2014",
-                  "status": "red"
+                  "status": "red",
+                  "nid": 123
                 },
                 {
                   "period": "Q1 2015",
-                  "status": "green"
+                  "status": "green",
+                  "nid": 124
                 },
                 {
                   "period": "Q2 2015",
-                  "status": "green"
+                  "status": "green",
+                  "nid": 125
                 },
                 {
                   "period": "Q3 2015",
-                  "status": "red"
+                  "status": "red",
+                  "nid": 122                  
                 }
               ]
             },

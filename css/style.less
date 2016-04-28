@@ -187,7 +187,7 @@ a.detail {
   border-right: 7px solid #f8494a;
 }
 
-.status-undefined {
+.status-gray {
   border-right: 7px solid lightslategray;
 }
 
@@ -207,13 +207,27 @@ li.hierarchy > a.expander {
 }
 
 .status-detail-mini {
-  padding: 3px;
+  padding: 5px;
   font-size: 14px;
+  
+  a {
+      text-decoration: none;      
+  }
+  
   &:before {
     content: "\f111";
     font-family: "FontAwesome";
     margin-right: 4px;
   }
+  
+  &:after {
+    content: "\f054";
+    font-family: "FontAwesome";
+    margin-left: 2px;
+    font-size: 10px;
+    vertical-align: middle;
+  }
+  
   &.red:before {
     color: #f8494a;
   }
@@ -372,8 +386,8 @@ button {
 
 .popup-node {
   position: fixed;
-  top: 35px;
-  left: 35px;
+  top: 5px;
+  left: 5px;
   background-color: white;
   border: 1px solid #e2e2e2;
   padding: 40px;
