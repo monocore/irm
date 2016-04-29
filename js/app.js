@@ -1,7 +1,21 @@
+var config = {
+    endpoint: "/bestuursrapportage/json/",
+    currentVocabulary: "1", //SLA 
+    currentYear : "2016",
+    currentPeriod: "Q1",
+    nodeURL : function(){
+        return this.endpoint + "node/";
+    },
+    treeURL: function(){
+        return this.endpoint + "tree/" + this.currentVocabulary + "/" + this.currentYear + "/" + this.currentPeriod
+    }
+}
+
 /**
  * Service wrapper
  */
 var requestWrapper = function(opts) {
+    console.log(opts);
     return new function() {
         me = this;
         me.opts = opts;
@@ -38,7 +52,7 @@ var requestWrapper = function(opts) {
  * Not using a controller now only using the output of the data service
  */
 var App = {
-    service: requestWrapper({ method: "GET", url: "/bestuursrapportage/json/1/2016/Q1" }),
+    service: requestWrapper({ method: "GET", url: config.treeURL()}),
         
     view: function() {
         return [
@@ -117,12 +131,13 @@ var App = {
                 m("div", { class: "hidable hidden" },
                     m("div", { class: "row" },
                         m("div", { class: "col1" }, m("p", { class: "teaser" }, item.teaser),                                                        
-                            function() {                                
-                                if (item.details === true) {
+                            function() {
+                                if (item.hasOwnProperty("body") && item.body.length > 0) {                          
+                                //if (item.details === true) {
                                     return [
                                         m("button", {
                                             onclick: function() {
-                                                showNode(this.nextElementSibling, item.nid, item);
+                                                showNode(this.nextElementSibling, item);
                                             }
                                         }, "Details"),
                                         m("div", { class: "popup-node hidden" },
@@ -155,8 +170,11 @@ var App = {
             if (item.hasOwnProperty("statushistory")) {
                 return m("ol", item.statushistory.map(function(row) {                
                     return m("li", { class: "status-detail-mini " + row.status }, m("a", { href: "#", onclick: function(){
-                        //Call shownode without item so it will retrieve it's own teaser, title, chart, status etc.
-                        showNode(this.nextElementSibling, row.nid);
+                        //Get history node
+                        $.getJSON(config.nodeURL + row.nid, function(data){
+                           var result = JSON.parse(data);
+                           showNode(this.nextElementSibling, result); 
+                        });                        
                     }}, row.period),
                         m("div", { class: "popup-node hidden" },
                             m("i", {
@@ -208,45 +226,41 @@ function toggleSiblings(el, current, item) {
  * @param nid
  * @param item Object, optional
  */
-function showNode(element, nid, item) {
+function showNode(element, item) {    
+    return m("");/*
+    console.log(item);
     var chart_id, options;
-    $('.content', element).load("/bestuursrapportage/content/" + nid.toString(), function(response, status, xhr) {
-        if (status == 'error') {
-            console.log("Error loading node");
-        } else {
-            //If item not available, load from service
-            if (item === undefined) {
-                $.getJSON("/betuursrapportage/json/node/" + nid, function(data){
-                    item = data;
-                    renderNode(element, item);
-                });
-            } else {
-                renderNode(element, item);
-            }
-        }
-    });
-}
-
-function renderNode(element, item){
     height = $(window).height() - 10;   // returns height of browser viewport
     width = $(window).width() - 10;
     $(element).css({ "width": width, "min-height": height, "height": "auto" });
+    
+    $("<h1>").appendTo(".content", element);
+    $(".content h1", element).append(item.name);
+    //Insert teaser
+    if (item.hasOwnProperty("teaser")) {
+        $('<span class="teaser">').appendTo(".content", element);
+        $('<p>').appendTo(".teaser", element);
+        $("span.teaser p", element).append(item.teaser);
+    }     
     element.classList.toggle("hidden");
     //Insert chart if available
     if (item.hasOwnProperty("charts")) {
         //insert after h1
-        chart_id = "chart-" + nid;
+        chart_id = "chart-" + item.nid;
         var hc = document.createElement("div");
         hc.setAttribute("id", chart_id);
-        $(hc).insertAfter(".content h1");
+        $(hc).appendTo(".content", element);
         //Apply the highchart
+        $(chart_id).highcharts(item.charts[0].options);
         Highcharts.chart(chart_id, item.charts[0].options);
+        console.log(item.charts[0].options);
+        
     }
-    //Insert teaser
-    if (item.hasOwnProperty("teaser")) {
-        $('<span class="teaser>').add("<p>" + item.teaser + "</p>").insertAfter(".content h1");
-    }
+    $('<div class="body">').appendTo(".content", element);    
+    $(".body", element).append(item.body);
+    */
 }
+
 /**
  * Mithril component "wrapper" for the highcharts component
  * See https://lhorie.github.io/mithril/integration.html 
