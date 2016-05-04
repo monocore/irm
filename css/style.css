@@ -352,9 +352,15 @@ ol ol > li.bottom-level {
   -o-transform: none;
   transform: none;
 }
+li.bottom-level.expanded {
+  background-color: white;
+}
 li.bottom-level.expanded a {
   box-shadow: none !important;
   border-radius: 0 !important;
+}
+li.bottom-level.expanded .hidable {
+  padding-left: 25px;
 }
 .istitle {
   position: absolute;
@@ -380,6 +386,10 @@ li.bottom-level.expanded a {
 .istitle i:before {
   content: "\f060" !important;
 }
+p.detail-description {
+  font-style: italic;
+  margin-bottom: 10px;
+}
 p.teaser {
   font-family: Oxygen;
   line-height: 19px;
@@ -395,10 +405,14 @@ button {
   display: block;
   border-radius: 4px;
 }
-.popup-node {
+#popup,
+.popup {
+  text-align: left;
   position: fixed;
-  top: 5px;
-  left: 5px;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
   background-color: white;
   border: 1px solid #e2e2e2;
   padding: 40px;
@@ -408,24 +422,36 @@ button {
   font-family: Oxygen;
   font-weight: 100;
   color: rgba(0, 0, 0, 0.6);
+  font-size: 16px;
 }
-.popup-node i.fa-times {
+#popup i.fa-times,
+.popup i.fa-times {
   float: right;
   font-size: 22px !important;
   position: relative;
-  top: -20px;
-  right: -20px;
+  top: -30px;
+  right: -30px;
+  padding: 20px;
 }
-.popup-node h1,
-.popup-node h2,
-.popup-node h3 {
+#popup .teaser,
+.popup .teaser {
+  font-style: italic;
+}
+#popup h1,
+.popup h1,
+#popup h2,
+.popup h2,
+#popup h3,
+.popup h3 {
   margin-bottom: 10px;
 }
-.popup-node p {
+#popup p,
+.popup p {
   line-height: 18px;
   padding: 10px 10px 10px 0px;
 }
-.popup-node .chart {
+#popup .chart,
+.popup .chart {
   min-height: 200px;
   padding: 20px 0;
 }

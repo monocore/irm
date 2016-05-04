@@ -1,3 +1,16 @@
+var config = {
+    endpoint: "/bestuursrapportage/json/",
+    currentVocabulary: "1", //SLA 
+    currentYear : "2016",
+    currentPeriod: "Q1",
+    nodeURL : function(){
+        return this.endpoint + "node/";
+    },
+    treeURL: function(){
+        return this.endpoint + "tree/" + this.currentVocabulary + "/" + this.currentYear + "/" + this.currentPeriod
+    }
+}
+
 /**
  * Service wrapper
  */
@@ -38,7 +51,7 @@ var requestWrapper = function(opts) {
  * Not using a controller now only using the output of the data service
  */
 var App = {
-    service: requestWrapper({ method: "GET", url: "/bestuursrapportage/json/1/2016/Q1" }),
+    service: requestWrapper({ method: "GET", url: config.treeURL()}),
         
     view: function() {
         return [
@@ -109,30 +122,27 @@ var App = {
                     m("i", { class: "fa fa-chevron-right" }),
                     m("div", { class: "row" },
                         m("div", { class: "col1" },
-                            m("p", { class: "detail-title" }, item.name)),
+                            m("p", { class: "detail-title" }, item.name)
+                        ),
                         m("div", { class: "col2" },
                             m("span", { class: "status-detail " + item.status }))
                     )
                 ),
                 m("div", { class: "hidable hidden" },
                     m("div", { class: "row" },
-                        m("div", { class: "col1" }, m("p", { class: "teaser" }, item.teaser),                                                        
-                            function() {                                
-                                if (item.details === true) {
-                                    return [
-                                        m("button", {
+                        m("div", { class: "col1" }, m("p", { class: "detail-description" }, item.description), m("p", { class: "teaser" }, item.teaser),
+                            function() {
+                                if (item.hasOwnProperty("body") && item.body.length > 0) {
+                                    return [                                        
+                                        m("button", {                                           
                                             onclick: function() {
-                                                showNode(this.nextElementSibling, item.nid, item);
-                                            }
-                                        }, "Details"),
-                                        m("div", { class: "popup-node hidden" },
-                                            m("i", {
-                                                class: "fa fa-times", onclick: function() {
-                                                    this.parentNode.classList.toggle("hidden");
+                                                if (this.nextElementSibling) {                                                                                                        
+                                                    this.nextElementSibling.classList.toggle("hidden");
+                                                } else {
+                                                    showNode(this, item);    
                                                 }
-                                            }),
-                                            m("div", { class: "content" })
-                                        )
+                                            }
+                                        }, "Details")                                        
                                     ]
                                 } else {
                                     //Only draw chart if details is false                                    
@@ -155,21 +165,22 @@ var App = {
             if (item.hasOwnProperty("statushistory")) {
                 return m("ol", item.statushistory.map(function(row) {                
                     return m("li", { class: "status-detail-mini " + row.status }, m("a", { href: "#", onclick: function(){
-                        //Call shownode without item so it will retrieve it's own teaser, title, chart, status etc.
-                        showNode(this.nextElementSibling, row.nid);
-                    }}, row.period),
-                        m("div", { class: "popup-node hidden" },
-                            m("i", {
-                                class: "fa fa-times", onclick: function() {
-                                    this.parentNode.classList.toggle("hidden");
-                                }
-                            }),
-                            m("div", { class: "content" })
-                        )
+                        //Get history node
+                        var el = this;
+                        if (this.nextElementSibling) {
+                            this.nextElementSibling.classList.toggle("hidden");
+                        } else {
+                            $.getJSON(config.nodeURL() + row.nid, function(data){
+                                showNode(el, data);
+                                //m.render(document.getElementById("chart-" + row.nid), m.component(mChart, {data: item}));
+                            });
+                        }
+                        }}, row.period)
                     );
                 }));
             }
         }
+
         /**
          * Render the highcharts charts using the custom created mChart component
          * ToDo allow multiple charts
@@ -180,8 +191,7 @@ var App = {
                 /*item.charts.forEach(function(chart){
                     charts.push(m.component(mChart, {data: chart}));
                 });*/
-                return m.component(mChart, {data: item.charts[0]});
-                //return charts;
+                return m.component(mChart, {data: item});                
             }
         }
     }
@@ -206,57 +216,58 @@ function toggleSiblings(el, current, item) {
  *
  * @param element target for node content
  * @param nid
- * @param item Object, optional
+ * @param item Object : node details
+ * @param originalItem Object : node details
  */
-function showNode(element, nid, item) {
-    var chart_id, options;
-    $('.content', element).load("/bestuursrapportage/content/" + nid.toString(), function(response, status, xhr) {
-        if (status == 'error') {
-            console.log("Error loading node");
-        } else {
-            //If item not available, load from service
-            if (item === undefined) {
-                $.getJSON("/betuursrapportage/json/node/" + nid, function(data){
-                    item = data;
-                    renderNode(element, item);
-                });
-            } else {
-                renderNode(element, item);
-            }
-        }
+function showNode(element, item) {
+    //disable scrolling on the body
+    $('body').css("overflow", "hidden");
+    var chart_id, options, height, width, popup;
+    $(element).after(popup);
+    popup = document.createElement("div");
+    popup.classList.add("popup");    
+    $(element).after(popup);
+    $popup = $(popup);
+    $popup.html('<i class="fa fa-times"></i><div class="content"></div>');
+    $popup.on("click", "i", function(){        
+        this.parentElement.classList.toggle("hidden");
+        $("body").css("overflow", "auto");
     });
-}
 
-function renderNode(element, item){
-    height = $(window).height() - 10;   // returns height of browser viewport
-    width = $(window).width() - 10;
-    $(element).css({ "width": width, "min-height": height, "height": "auto" });
-    element.classList.toggle("hidden");
+    $("<h1>").appendTo(".content", popup);
+    $(".content h1", popup).append(item.title);
+    //Insert teaser
+    if (item.hasOwnProperty("teaser")) {
+        $('<span class="teaser">').appendTo(".content", popup);
+        $('<p>').appendTo(".teaser", popup);
+        $("span.teaser p", popup).append(item.teaser);
+    }
+
+    //popup.classList.toggle("hidden");
     //Insert chart if available
     if (item.hasOwnProperty("charts")) {
         //insert after h1
-        chart_id = "chart-" + nid;
+        chart_id = "chart-" + item.nid;
         var hc = document.createElement("div");
         hc.setAttribute("id", chart_id);
-        $(hc).insertAfter(".content h1");
+        $(hc).appendTo(".content", element);
         //Apply the highchart
+        //$(chart_id).highcharts(item.charts[0].options);
         Highcharts.chart(chart_id, item.charts[0].options);
     }
-    //Insert teaser
-    if (item.hasOwnProperty("teaser")) {
-        $('<span class="teaser>').add("<p>" + item.teaser + "</p>").insertAfter(".content h1");
-    }
+    $('<div class="body">').appendTo(".content", $popup);
+    $(".body", $popup).append(item.body);
 }
+
 /**
  * Mithril component "wrapper" for the highcharts component
  * See https://lhorie.github.io/mithril/integration.html 
  */
-
 var mChart = {
     //Returns a chart
     view: function(ctrl, attrs) {
-        //Create a chartist chart        
-        return m("div", {id: attrs.data.selector, config: mChart.config(attrs) });
+        //Create a chart -> attrs.data = item
+        return m("div", {id: attrs.data.nid, config: mChart.config(attrs) });
     },
     /**
     Highcharts config factory. The params in this doc refer to properties of the `ctrl` argument
@@ -267,8 +278,8 @@ var mChart = {
         return function(element, isInitialized) {
             if (typeof Highcharts !== 'undefined') {
                 if (!isInitialized) {
-                    m.startComputation();                    
-                    var chart = Highcharts.chart(element, ctrl.data.options);
+                    m.startComputation();                                        
+                    var chart = Highcharts.chart(element, ctrl.data.charts[0].options);
                     m.endComputation();
 
                 }                
